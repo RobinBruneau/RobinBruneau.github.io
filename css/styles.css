@@ -398,6 +398,15 @@ button:not(:disabled),
   border-style: none;
 }
 
+a:link, a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  background-color: white;
+}
+
 textarea {
   resize: vertical;
 }
@@ -489,6 +498,11 @@ progress {
 
 .lead {
   font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.lead2 {
+  font-size: 1.75rem;
   font-weight: 300;
 }
 
@@ -679,6 +693,9 @@ progress {
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
+  justify-content: space-around;
+  gap : 1px;
+
 }
 .row > * {
   flex-shrink: 0;
@@ -1286,8 +1303,8 @@ progress {
     width: 25%;
   }
   .col-lg-4 {
-    flex: 0 0 auto;
-    width: 33.33333333%;
+    flex: auto auto auto;
+    width: 30.33333333%;
   }
   .col-lg-5 {
     flex: 0 0 auto;
