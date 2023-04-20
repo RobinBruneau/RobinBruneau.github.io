@@ -398,12 +398,12 @@ button:not(:disabled),
   border-style: none;
 }
 
-a:link, a:visited {
+.desc-link:link, .desc-link:visited {
   color: black!important;
   text-decoration: none!important;
 }
 
-a:hover, a:active {
+.desc-link:hover, .desc-link:active {
   background-color: white!important;
 }
 
