@@ -399,7 +399,7 @@ button:not(:disabled),
 }
 
 .desc-link:link, .desc-link:visited {
-  color: black!important;
+  color: orange!important;
   text-decoration: none!important;
 }
 
