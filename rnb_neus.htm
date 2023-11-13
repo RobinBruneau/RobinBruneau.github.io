@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>RnB-NeuS</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='icon' href='assets/icons/rnb.png' sizes='472x472'>
+
+    <link href="./neural/npm/bootstrap%405.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <script src="./neural/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script id="MathJax-script" async="" src="../../../npm/mathjax%403/es5/tex-mml-chtml.js"></script>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'> -->
+
+    <link rel="stylesheet" href="js/dics/dics.original.css">
+    <script src="js/dics/dics.original.js"></script>
+    <script src="js/event_handler.js"></script>
+
+    <link href="./neural/css?family=IBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
+    <link href="./neural/css-1?family=Inconsolata:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style_neural.css">
+</head>
+
+<body lang="en">
+    <main role="main">
+
+        <section class="jumbotron text-center" id="banner">
+            <div class="container text-center" id="title">
+                <h2 class="jumbotron-heading text-center">
+                    <b>RnB-NeuS</b> : Reflectance and normal Based reconstruction with NeuS
+                </h2>
+            </div>
+
+            <div class="container" style="max-width: none;">
+                <div class="row row-author" style="margin: 0 70px 0 70px;">
+                    <div class="col-md author"><a class="link" href="https://robinbruneau.github.io/" target="_blank">Baptiste
+                            Brument</a><sup>1</sup></div>
+                    <div class="col-md author"><a class="link" href="https://robinbruneau.github.io/" target="_blank">Robin
+                            Bruneau</a><sup>1,2</sup></div>
+                            <div style="margin-top:10px"> </div> 
+                    <div class="col-md author"><a href="https://robinbruneau.github.io/" target="_blank">Jean Mélou</a><sup>1</sup></div>
+                    <div class="col-md author"><a href="https://robinbruneau.github.io/" target="_blank">Yvain Quéau</a><sup>3</sup></div>
+                </div>
+                <div class="row row-author" style="margin: 0 70px 0 70px;">
+                    <div class="col-md author"><a href="https://robinbruneau.github.io/" target="_blank">François Lauze</a><sup>2</sup></div>
+                    <div class="col-md author"><a href="https://robinbruneau.github.io/" target="_blank">Jean-Denis Durou</a><sup>1</sup></div>
+                    <div class="col-md author"><a href="https://robinbruneau.github.io/" target="_blank">Lilian Calvet</a><sup>4</sup></div>
+                </div>
+
+                <div class="row" style="margin-top:0.5rem; margin-left: auto; margin-right: auto;">
+                    <div class="col-md">
+                        <div id="affiliation">
+                            <sup>1</sup>IRIT &nbsp;&nbsp;&nbsp;&nbsp; <sup>2</sup>DIKU &nbsp;&nbsp;&nbsp;&nbsp; <sup>3</sup>GREYC &nbsp;&nbsp;&nbsp;&nbsp; <sup>4</sup>ZURICH
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="venue">
+                IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2024<br><br>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <ul class="nav nav-pills">
+                        <li class="space-between">
+                            <a href="http://arxiv.org/abs/2207.11406">
+                            <!-- <image src="img/paper_image.jpg" height="60px"> -->
+                            <image src="assets/icons/paper.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </image></a>
+                        </li>
+                        <li class="space-between">
+                            <a href="https://github.com/ywq/psnerf">
+                            <image src="assets/icons/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </image></a>
+                        </li>
+                        <li class="space-between">
+                            <!-- <a href="#video"> -->
+                            <a href="https://youtu.be/AhVbcevzCqc">
+                            <image src="assets/icons/paper.png" height="60px">
+                                <h4><strong>Suppl.</strong></h4>
+                            </image></a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+        </section>
+    </main>
+
+    <div style="text-align: center; font-size: 90%;">
+        (best viewed with Google Chrome on a desktop/laptop)
+    </div>
+
+   
+
+    <div class="container" style="padding-top: 10px;">
+
+        <hr>
+
+        <!-- Abstract -->
+        <h5>Abstract</h5>
+        <p style="text-align: justify; padding-bottom: 10px;"">
+            This paper presents a versatile paradigm for integrating multi-view normal and reflectance maps obtained through photometric stereo. 
+            Our approach utilizes a pixel-wise joint re-parameterization of normal and reflectance, treating them as a vector of luminances rendered under simulated,
+             varying illumination. This re-parameterization facilitates the seamless integration of normal and reflectance maps as input data in neural volume 
+             rendering-based 3D-reconstruction, while maintaining a singular optimization objective. This stands in contrast to recent multi-view photometric 
+             stereo (MVPS) methods that rely on multiple, potentially conflicting objectives. Despite its apparent simplicity, our proposed approach surpasses 
+             state-of-the-art methods on MVPS benchmarks across F-score, Chamfer distance, and mean angular error. Notably, it demonstrates a significant 
+             improvement in the detailed 3D-reconstruction of areas with high curvature or low visibility.
+        </p>
+
+        <!-- Summary video -->
+        <hr>
+        <h5>Video</h5>
+        <div style="text-align: center; padding-bottom: 10px;">
+            <!-- <iframe width=860 height=484 class="large_video" src="https://www.youtube.com/embed/dCmCZs2Hpi0" frameborder=0></iframe> -->
+            <video width="50%" class="approach_video" controls="" autoplay="" muted="" loop=""><source src="assets/rnb_neus/videos/buddha.mp4" type="video/mp4">X</video>
+            
+        </div>
+
+        <!-- Large-scale reconstruction -->
+        <hr>
+        <h5>Our DiligenT-MV Reonstructions</h5>
+        <div class="container; padding-bottom: 10px;">
+            <ul class="nav nav-tabs nav-fill nav-justified" id="large-scale-recon-2">
+                <li class="nav-item">
+                    <a class="nav-link" onclick="largeSceneEvent(2)">Bear</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="largeSceneEvent(3)">Buddha</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="largeSceneEvent(4)">Cow</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="largeSceneEvent(5)">Pot2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="largeSceneEvent(6)">Reading</a>
+                </li>
+            </ul>
+            <div class="b-dics" style="width: 3000px">
+                <img src="assets/img/nvidia/rgb.png" alt="RGB view">
+                <img src="assets/img/nvidia/mesh.png" alt="3D surface reconstruction">
+                <img src="assets/img/nvidia/normal.png" alt="Surface normal">
+            </div>
+        </div>
+
+        <!-- Object-centric reconstruction -->
+        <hr>
+        <h5>DiligenT-MV comparisons</h5>
+        <div class="container; padding-bottom: 10px;">
+            <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+                <li class="nav-item">
+                    <a class="nav-link active" onclick="objectSceneEvent(0)">Bear</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="objectSceneEvent(1)">Buddha</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="objectSceneEvent(2)">Cow</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="objectSceneEvent(3)">Pot2</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" onclick="objectSceneEvent(4)">Reading</a>
+                </li>
+            </ul>
+            <div class="b-dics" style="width: 3000px; font-weight: 600;">
+                <img src="assets/rnb_neus/images/cmp_methods/bear/kaya.png" alt="Kaya23">
+                <img src="assets/rnb_neus/images/cmp_methods/bear/ours.png" alt="RnB-Neus (Ours)">
+                <img src="assets/rnb_neus/images/cmp_methods/bear/mvpsnet.png" alt="MVPSNet">
+            </div>
+        </div>
+
+        <!-- Approach -->
+        <hr>
+        <h5>Approach</h5>
+        <div class="container; padding-bottom: 10px;">
+            <div>
+                RnB-Neus builds on top of <a href="https://lingjie0206.github.io/papers/NeuS/">SDF-based volume rendering</a>.
+            </div>
+
+            <div>
+                <br>
+                <h6 style="margin-bottom: 30px;">1.&nbsp;&nbsp;Overview</h6>
+                <div class="text-center">
+                    <image src="assets/rnb_neus/images/pipeline.png" class="img-responsive" alt="overview">
+                </div>
+
+                <br>
+
+                <h6 style="margin-bottom: 30px;">2.&nbsp;&nbsp;Results</h6>
+                <div class="text-center">
+                    <image src="assets/rnb_neus/images/cmp_methods_zoom.png" class="img-responsive" alt="overview">
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Citation -->
+        <hr>
+        <h5>Citation</h5>
+        <div class="row">
+            <div id="citation">
+                @inproceedings{Brument24,<br>
+                &nbsp;&nbsp;title={RnB-Neus: Reflectance and normal Based reconstruction with NeuS},<br>
+                &nbsp;&nbsp;author={{Baptiste Brument and
+                  Robin Bruneau and
+                  Jean Mélou and
+                  Yvain Quéau and
+                  François Lauze and 
+				  Jean-Denis Durou and
+				  Lilian Calvet},<br>
+                &nbsp;&nbsp;booktitle={IEEE Conference on Computer Vision and Pattern Recognition ({CVPR})},<br>
+                &nbsp;&nbsp;year={2024}<br>
+                }
+            </div>
+        </div>
+
+    </div>
+    <script src="js/jquery.js"></script>
+
+</body>
+
+</html>
