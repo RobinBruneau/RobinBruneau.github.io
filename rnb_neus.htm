@@ -108,55 +108,50 @@
         <!-- Abstract -->
         <h5>Abstract</h5>
         <p style="text-align: justify; padding-bottom: 10px;"">
-            This paper presents a versatile paradigm for integrating multi-view normal and reflectance maps obtained through photometric stereo. 
-            Our approach utilizes a pixel-wise joint re-parameterization of normal and reflectance, treating them as a vector of luminances rendered under simulated,
-             varying illumination. This re-parameterization facilitates the seamless integration of normal and reflectance maps as input data in neural volume 
-             rendering-based 3D-reconstruction, while maintaining a singular optimization objective. This stands in contrast to recent multi-view photometric 
-             stereo (MVPS) methods that rely on multiple, potentially conflicting objectives. Despite its apparent simplicity, our proposed approach surpasses 
-             state-of-the-art methods on MVPS benchmarks across F-score, Chamfer distance, and mean angular error. Notably, it demonstrates a significant 
-             improvement in the detailed 3D-reconstruction of areas with high curvature or low visibility.
+            This paper introduces a versatile paradigm for integrating multi-view reflectance and normal maps acquired through photometric stereo. 
+            Our approach employs a pixel-wise joint re-parameterization of reflectance and normal, considering them as a vector of radiances rendered 
+            under simulated, varying illumination. This re-parameterization enables the seamless integration of reflectance and normal maps as input 
+            data in neural volume rendering-based 3D reconstruction while preserving a single optimization objective. In contrast,  recent multi-view 
+            photometric stereo (MVPS) methods depend on multiple, potentially conflicting objectives. Despite its apparent simplicity, our proposed 
+            approach outperforms state-of-the-art approaches in MVPS benchmarks across F-score, Chamfer distance, and mean angular error metrics. 
+            Notably, it significantly improves the detailed 3D reconstruction of areas with high curvature or low visibility.
         </p>
 
-        <!-- Summary video -->
+		
+        <!-- Comparisons Videos -->
         <hr>
-        <h5>Video</h5>
-        <div style="text-align: center; padding-bottom: 10px;">
-            <!-- <iframe width=860 height=484 class="large_video" src="https://www.youtube.com/embed/dCmCZs2Hpi0" frameborder=0></iframe> -->
-            <video width="50%" class="approach_video" controls="" autoplay="" muted="" loop=""><source src="assets/rnb_neus/videos/buddha.mp4" type="video/mp4">X</video>
-            
-        </div>
-
-        <!-- Large-scale reconstruction -->
-        <hr>
-        <h5>Our DiligenT-MV Reonstructions</h5>
+        <h5>Video comparisons on DiligenT-MV</h5>
         <div class="container; padding-bottom: 10px;">
-            <ul class="nav nav-tabs nav-fill nav-justified" id="large-scale-recon-2">
+            <ul class="nav nav-tabs nav-fill nav-justified" id="video-changer">
                 <li class="nav-item">
-                    <a class="nav-link" onclick="largeSceneEvent(2)">Bear</a>
+                    <a class="nav-link active" onclick="changeVideo(0)">Bear</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="largeSceneEvent(3)">Buddha</a>
+                    <a class="nav-link" onclick="changeVideo(1)">Buddha</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="largeSceneEvent(4)">Cow</a>
+                    <a class="nav-link" onclick="changeVideo(2)">Cow</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="largeSceneEvent(5)">Pot2</a>
+                    <a class="nav-link" onclick="changeVideo(3)">Pot2</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="largeSceneEvent(6)">Reading</a>
+                    <a class="nav-link" onclick="changeVideo(4)">Reading</a>
                 </li>
             </ul>
-            <div class="b-dics" style="width: 3000px">
-                <img src="assets/img/nvidia/rgb.png" alt="RGB view">
-                <img src="assets/img/nvidia/mesh.png" alt="3D surface reconstruction">
-                <img src="assets/img/nvidia/normal.png" alt="Surface normal">
+            
+            <div>
+                <video id="myVideo" width="100%" class="approach_video" controls="" autoplay="" muted="" loop="">
+                    <source  src="assets/rnb_neus/videos/cmp/bear.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
 
-        <!-- Object-centric reconstruction -->
+
+
+        <!-- Comparisons Images -->
         <hr>
-        <h5>DiligenT-MV comparisons</h5>
+        <h5>Image comparions on DiLiGenT-MV</h5>
         <div class="container; padding-bottom: 10px;">
             <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
                 <li class="nav-item">
@@ -175,13 +170,25 @@
                     <a class="nav-link" onclick="objectSceneEvent(4)">Reading</a>
                 </li>
             </ul>
-            <div class="b-dics" style="width: 3000px; font-weight: 600;">
+            <div class="b-dics" style="width: 60%; font-weight: 600; margin: 0 auto;">
                 <img src="assets/rnb_neus/images/cmp_methods/bear/kaya.png" alt="Kaya23">
                 <img src="assets/rnb_neus/images/cmp_methods/bear/ours.png" alt="RnB-Neus (Ours)">
                 <img src="assets/rnb_neus/images/cmp_methods/bear/mvpsnet.png" alt="MVPSNet">
             </div>
         </div>
 
+
+        <!-- Relighting video -->
+        <hr>
+        <h5>Relighting</h5>
+        <div style="text-align: center; padding-bottom: 10px;">
+            <video width="100%" class="approach_video" controls="" autoplay="" muted="" loop="">
+            <source src="assets/rnb_neus/videos/relighting.mp4" type="video/mp4">X
+            </video>
+        </div>
+
+  
+        
         <!-- Approach -->
         <hr>
         <h5>Approach</h5>

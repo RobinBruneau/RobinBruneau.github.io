@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', domReady);
 
         function domReady() {
+            
             new Dics({
-                container: document.querySelectorAll('.b-dics')[0]
+                container: document.querySelectorAll('.b-dics')[0],
+                hideTexts: false,
+                textPosition: "top"
             });
 
             new Dics({
@@ -11,83 +14,10 @@ document.addEventListener('DOMContentLoaded', domReady);
                 textPosition: "top"
             });
 
-            new Dics({
-                container: document.querySelectorAll('.b-dics')[2],
-                hideTexts: false,
-                textPosition: "top"
-            });
-
-            new Dics({
-                container: document.querySelectorAll('.b-dics')[3],
-                hideTexts: false,
-                textPosition: "top"
-            });
-
-            new Dics({
-                container: document.querySelectorAll('.b-dics')[4],
-                hideTexts: false,
-                textPosition: "top"
-            });
-        }
-
-        function largeSceneEvent(idx) {
-            let dics = document.querySelectorAll('.b-dics')[0]
-            let sections = dics.getElementsByClassName('b-dics__section')
-            let imagesLength = 3
-            for (let i = 0; i < imagesLength; i++) {
-                let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
-                switch (idx) {
-                    case 0:
-                        image.src = 'assets/rnb_neus/images/color_mesh_normal/bear/';
-                        break;
-                    case 1:
-                        image.src = 'assets/rnb_neus/images/color_mesh_normal/buddha/';
-                        break;
-                    case 2:
-                        image.src = 'assets/rnb_neus/images/color_mesh_normal/cow/';
-                        break;
-                    case 3:
-                        image.src = 'assets/rnb_neus/images/color_mesh_normal/pot2/';
-                        break;
-                    case 4:
-                        image.src = 'assets/rnb_neus/images/color_mesh_normal/reading/';
-                        break;
-                }
-                switch (i) {
-                    case 0:
-                        image.src = image.src + '/rgb.png';
-                        break;
-                    case 1:
-                        image.src = image.src + '/mesh.png';
-                        break;
-                    case 2:
-                        image.src = image.src + '/normal.png';
-                        break;
-                }
-            }
-
-            scene_list = document.getElementById("large-scale-recon-1").children;
-            for (let i = 0; i < scene_list.length; i++) {
-                if (idx == i) {
-                    scene_list[i].children[0].className = "nav-link active"
-                }
-                else {
-                    scene_list[i].children[0].className = "nav-link"
-                }
-            }
-            scene_list = document.getElementById("large-scale-recon-2").children;
-            for (let i = 0; i < scene_list.length; i++) {
-                if (idx == i+2) {
-                    scene_list[i].children[0].className = "nav-link active"
-                }
-                else {
-                    scene_list[i].children[0].className = "nav-link"
-                }
-            }
         }
 
         function objectSceneEvent(idx) {
-            let dics = document.querySelectorAll('.b-dics')[1]
+            let dics = document.querySelectorAll('.b-dics')[0]
             let sections = dics.getElementsByClassName('b-dics__section')
             let imagesLength = 3
             for (let i = 0; i < imagesLength; i++) {
@@ -131,4 +61,43 @@ document.addEventListener('DOMContentLoaded', domReady);
                     scene_list[i].children[0].className = "nav-link"
                 }
             }
+        }
+
+        function changeVideo(videoNumber) {
+            // Get the video element
+            var video = document.getElementById("myVideo");
+    
+            // Set the video source based on the specified videoNumber using a switch case
+            switch (videoNumber) {
+                case 0:
+                    video.src = "assets/rnb_neus/videos/cmp/bear.mp4";
+                    break;
+                case 1:
+                    video.src = "assets/rnb_neus/videos/cmp/buddha.mp4";
+                    break;
+                case 2:
+                    video.src = "assets/rnb_neus/videos/cmp/cow.mp4";
+                    break;
+                case 3:
+                    video.src = "assets/rnb_neus/videos/cmp/pot2.mp4";
+                    break;
+                case 4:
+                    video.src = "assets/rnb_neus/videos/cmp/reading.mp4";
+                    break;
+            }
+    
+            // Reset the video player
+            video.load();
+
+
+            let scene_list = document.getElementById("video-changer").children;
+            for (let i = 0; i < scene_list.length; i++) {
+                if (videoNumber == i) {
+                    scene_list[i].children[0].className = "nav-link active"
+                }
+                else {
+                    scene_list[i].children[0].className = "nav-link"
+                }
+            }
+    
         }
