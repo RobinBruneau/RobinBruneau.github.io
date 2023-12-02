@@ -49,6 +49,7 @@ a:hover {
 #main a:hover {
     font-weight: 600;
     text-decoration: underline;
+    color: #ffffff;
 }
 
 
@@ -94,7 +95,7 @@ hr {
     margin: 0 5px 0 0;
 }
 .jumbotron .btn-primary1:hover {
-    color: #fff;
+    color: #e60b0b;
     background-color: #ab930e;
     border-color: #ffed8a;
     font-weight: 500;
@@ -197,7 +198,7 @@ h9 {
     margin: 10px auto 0 auto;
 }
 #inquiries a { color: #0E8; }
-#inquiries a:hover { color: #4FB; }
+#inquiries a:hover { color: rgb(130, 206, 178); }
 
 .buttons {
     padding: 10px 0 0 0;
@@ -243,8 +244,7 @@ h6 {
     font-weight: 600;
 }
 .approach_video {
-    margin: 30px 0 20px 0;
-    border: 1px solid #BBB;
+    margin: 0px 0 20px 0;
     box-shadow: 0 0 30px rgb(155, 155, 155);
 }
 .approach_text {
@@ -301,6 +301,7 @@ li {
     height: 100%; /* Make the nav-link fill the entire height of the nav-item */
     padding: 0; /* Remove padding for the nav-link */
     margin: 0; /* Remove margin for the nav-link */
+    background-color: #ececec;
 }
 
 .nav-justified .nav-item, .nav-justified > .nav-link {
@@ -321,7 +322,7 @@ li {
     overflow: hidden;
     text-align: center;
     width: 100%;
-    height: 20px;
+    height: 30px;
     background-color: inherit;
     float: left;
     border: 1px solid #ddd;
@@ -334,6 +335,12 @@ li {
     text-align: center;
 
 }
+
+.bordered-container {
+    
+    margin: 0px 0 20px 0;
+    box-shadow: 0 0 30px rgb(155, 155, 155);
+  }
 
 .img-responsive{
     max-width: 100%; /* Make the image responsive to the container's width */
@@ -350,17 +357,47 @@ li {
     background-color: #4f70c9;
     color:white;
     font-weight: 500;
-    display: block;
+    /*display: block;*/
 }
 
 .nav a {
     color: #000;
     text-decoration: none;
 }
+
+.nav .hover-image-link {
+    color: #000000;
+    text-decoration: none;
+}
+
 .nav a:hover {
     color: #ffffff;
     font-weight: 500;
+    background-color: #acb9db;
     text-decoration: none;
+}
+
+
+.nav .hover-image-link:hover {
+    color: #ff8800;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nav .hover-image-link img:hover {
+    transform: scale(1.1);
+  }
+
+.nav .hover-image-link img.second-image {
+    display: none;
+}
+
+.nav .hover-image-link:hover img.first-image {
+    display: none;
+}
+
+.nav .hover-image-link:hover img.second-image {
+    display: block;
 }
 
 .b-dics__slider {

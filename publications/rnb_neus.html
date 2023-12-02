@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>RNb-NeuS</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='icon' href='assets/icons/RNb.png' sizes='472x472'>
+
+    <link href="../neural/npm/bootstrap%405.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <script src="../neural/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script id="MathJax-script" async="" src="../../../npm/mathjax%403/es5/tex-mml-chtml.js"></script>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'> -->
+
+    <link rel="stylesheet" href="../js/dics/dics.original.css">
+    <script src="../js/dics/dics.original.js"></script>
+    <script src="../js/event_handler.js"></script>
+
+    <link href="../neural/css?family=IBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
+    <link href="../neural/css-1?family=Inconsolata:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/style_neural.css">
+</head>
+
+<body lang="en">
+    <main role="main">
+
+        <section class="jumbotron text-center" id="banner">
+            <div class="container text-center" id="title">
+                <h2 class="jumbotron-heading text-center" style="line-height: 35px;">
+                    <b>RNb-NeuS</b> : Reflectance and Normal-based Multi-View </br> 3D Reconstruction
+                </h2>
+                
+            </div>
+
+            <div class="container" style="max-width: none;">
+                <div class="row row-author" style="margin: 0 70px 0 70px;">
+                    <div class="col-md author"><a class="link" href=https://scholar.google.com/citations?user=3VsREZ8AAAAJ&hl=en/" target="_blank">Baptiste
+                            Brument</a><sup>1,*</sup></div>
+                    <div class="col-md author"><a class="link" href="../index.html" target="_blank">Robin
+                            Bruneau</a><sup>1,2,*</sup></div>
+                            <div style="margin-top:10px"> </div> 
+                    <div class="col-md author"><a href="https://sites.google.com/view/yvainqueau/" target="_blank">Yvain Quéau</a><sup>3</sup></div>
+                    <div class="col-md author"><a href="https://scholar.google.fr/citations?user=t9PRZ3AAAAAJ&hl=en" target="_blank">Jean Mélou</a><sup>1</sup></div>
+                    
+                </div>
+                <div class="row row-author" style="margin: 0 70px 0 70px;">
+                    <div class="col-md author"><a href="https://loutchoa.github.io/" target="_blank">François Lauze</a><sup>2</sup></div>
+                    <div class="col-md author"><a href="https://www.irit.fr/~Jean-Denis.Durou/" target="_blank">Jean-Denis Durou</a><sup>1</sup></div>
+                    <div class="col-md author"><a href="https://scholar.google.com/citations?user=6JewdrMAAAAJ&hl=en/" target="_blank">Lilian Calvet</a><sup>4</sup></div>
+                </div>
+
+                <div class="row" style="margin-top:0.5rem; margin-left: auto; margin-right: auto;">
+                    <div class="col-md">
+                        <div id="affiliation">
+                            <sup>1</sup>IRIT &nbsp;&nbsp;&nbsp;&nbsp; 
+                            <sup>2</sup>DIKU &nbsp;&nbsp;&nbsp;&nbsp; 
+                            <sup>3</sup>GREYC &nbsp;&nbsp;&nbsp;&nbsp; 
+                            <sup>4</sup>UNIVERSITY OF ZÜRICH
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div id="venue">
+                IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2024<br><br>
+            </div>-->
+
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <ul class="nav nav-pills">
+                        <li class="space-between">
+                            <a href="http://arxiv.org/" class="hover-image-link">
+                            <!-- <image src="img/paper_image.jpg" height="60px"> -->
+                            <image class="first-image" src="../assets/icons/paper.png" height="60px">
+                            <image class="second-image" src="../assets/icons/paper_hover.png" height="60px">
+                            <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li class="space-between">
+                            <a href="https://github.com/bbrument/RNb-NeuS/" class="hover-image-link">
+                            <image class="first-image" src="../assets/icons/github.png" height="60px">
+                            <image class="second-image" src="../assets/icons/github_hover.png" height="60px">
+                            <h4><strong>Code</strong></h4>
+                            </image></a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+        </section>
+    </main>
+
+
+    <div class="container">
+
+        <hr>
+
+        <!-- Abstract -->
+        <h5>Abstract</h5>
+        <p style="text-align: justify; padding-bottom: 30px;"">
+            This paper introduces a versatile paradigm for integrating multi-view reflectance and normal maps acquired through photometric stereo. 
+            Our approach employs a pixel-wise joint re-parameterization of reflectance and normal, considering them as a vector of radiances rendered 
+            under simulated, varying illumination. This re-parameterization enables the seamless integration of reflectance and normal maps as input 
+            data in neural volume rendering-based 3D reconstruction while preserving a single optimization objective. In contrast,  recent multi-view 
+            photometric stereo (MVPS) methods depend on multiple, potentially conflicting objectives. Despite its apparent simplicity, our proposed 
+            approach outperforms state-of-the-art approaches in MVPS benchmarks across F-score, Chamfer distance, and mean angular error metrics. 
+            Notably, it significantly improves the detailed 3D reconstruction of areas with high curvature or low visibility.
+        </p>
+
+		
+        <!-- Comparisons Videos -->
+        <hr>
+        <h5>Video comparisons on DiLiGenT-MV</h5>
+        <div class="container;" style="padding-bottom: 10px;">
+            <ul class="nav nav-tabs nav-fill nav-justified" id="video-changer">
+                <li class="nav-item">
+                    <a class="nav-link" onclick="changeVideo(0)">Bear</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" onclick="changeVideo(1)">Buddha</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="changeVideo(2)">Cow</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="changeVideo(3)">Pot2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="changeVideo(4)">Reading</a>
+                </li>
+            </ul>
+            
+            <div>
+                <video id="myVideo" width="100%" class="approach_video" controls="" autoplay="" muted="" loop="">
+                    <source  src="../assets/rnb_neus/videos/cmp/buddha.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+
+
+        <!-- Comparisons Images -->
+        <hr>
+        <h5>Image comparisons on DiLiGenT-MV</h5>
+        <div class="container;" style=" padding-bottom: 10px;">
+            <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+                <li class="nav-item">
+                    <a class="nav-link" onclick="objectSceneEvent(0)">Bear</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" onclick="objectSceneEvent(1)">Buddha</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="objectSceneEvent(2)">Cow</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="objectSceneEvent(3)">Pot2</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" onclick="objectSceneEvent(4)">Reading</a>
+                </li>
+            </ul>
+            <div class="bordered-container">
+            <div class="b-dics" style="width: 60%; font-weight: 600; margin: 0 auto;">
+                <img src="../assets/rnb_neus/images/cmp_methods/buddha/kaya.png" alt="Kaya23">
+                <img src="../assets/rnb_neus/images/cmp_methods/buddha/ours.png" alt="RNb-Neus (Ours)">
+                <img src="../assets/rnb_neus/images/cmp_methods/buddha/mvpsnet.png" alt="MVPSNet">
+            </div>
+            </div>
+        </div>
+
+
+        <!-- Relighting video -->
+        <hr>
+        <h5>Relighting</h5>
+        <div class="container;" style="padding-bottom: 10px; width: 70%; margin: 0 auto;">
+            <ul class="nav nav-tabs nav-fill nav-justified" id="video-changer-2">
+                <li class="nav-item">
+                    <a class="nav-link" onclick="changeVideo2(0)">Bear</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="changeVideo2(1)">Buddha</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="changeVideo2(2)">Cow</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  active" onclick="changeVideo2(3)">Pot2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="changeVideo2(4)">Reading</a>
+                </li>
+            </ul>
+            
+            <div>
+                <video id="myVideo2" width="100%" class="approach_video" controls="" autoplay="" muted="" loop="">
+                    <source  src="../assets/rnb_neus/videos/relighting/pot2.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+  
+        
+        <!-- Approach -->
+        <hr>
+        <h5>Approach</h5>
+        <div class="container; padding-bottom: 10px;">
+            <div>
+                RNb-Neus builds on top of <a href="https://lingjie0206.github.io/papers/NeuS/">SDF-based volume rendering</a>.
+            </div>
+
+            <div>
+                <br>
+                <h6 style="margin-bottom: 30px;">1.&nbsp;&nbsp;Overview</h6>
+
+                <p style="text-align: justify;"">
+                    Given multi-view and multi-light images of an object acquired from N sparse views, 
+                    our proposed methodology employs a two-step process. Initially, it utilizes a Photometric 
+                    Stereo (PS) solution—specifically, SDM-UniPS as detailed in our paper—to derive reflectance 
+                    and albedo maps. Subsequently, we leverage this information to generate simulated data adhering 
+                    to a purely Lambertian model. The subsequent step involves the application of the NeuS architecture.
+                    This architecture facilitates volume rendering employing a Lambertian approach by utilizing the 
+                    normals of the Neural Signed Distance Function (SDF) alongside a network that predicts albedo at 
+                    any spatial point. The optimization process involves minimizing the disparity between our simulated 
+                    images and the rendered images, ultimately yielding a refined Neural SDF that accurately represents 
+                    the object under consideration.
+                </p>
+                
+                <div class="text-center;"" style="padding-top: 30px; padding-bottom: 30px">
+                    <image src="../assets/rnb_neus/images/pipeline.png" class="img-responsive padding-top: 100px" alt="overview">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Citation -->
+        <hr>
+        <h5>Citation</h5>
+        <div class="row">
+            <div id="citation">
+                @inproceedings{Brument23,<br>
+                &nbsp;&nbsp;title={RNb-Neus: Reflectance and normal Based reconstruction with NeuS},<br>
+                &nbsp;&nbsp;author={Baptiste Brument and
+                  Robin Bruneau and
+                  Yvain Quéau and
+                  Jean Mélou and
+                  François Lauze and <br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  Jean-Denis Durou and
+				  Lilian Calvet},<br>
+                &nbsp;&nbsp;eprint={1502.00573},<br>
+                &nbsp;&nbsp;archivePrefix={arXiv},<br>
+                <!--&nbsp;&nbsp;booktitle={IEEE Conference on Computer Vision and Pattern Recognition ({CVPR})},<br>-->
+                &nbsp;&nbsp;year={2023}<br>
+                }
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

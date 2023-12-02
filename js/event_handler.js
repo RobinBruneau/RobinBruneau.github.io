@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', domReady);
                 textPosition: "top"
             });
 
+            new Dics({
+                container: document.querySelectorAll('.b-dics')[2],
+                hideTexts: false,
+                textPosition: "top"
+            });
         }
 
         function objectSceneEvent(idx) {
@@ -24,19 +29,19 @@ document.addEventListener('DOMContentLoaded', domReady);
                 let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
                 switch (idx) {
                     case 0:
-                        image.src = 'assets/rnb_neus/images/cmp_methods/bear/';
+                        image.src = '../assets/rnb_neus/images/cmp_methods/bear/';
                         break;
                     case 1:
-                        image.src = 'assets/rnb_neus/images/cmp_methods/buddha/';
+                        image.src = '../assets/rnb_neus/images/cmp_methods/buddha/';
                         break;
                     case 2:
-                        image.src = 'assets/rnb_neus/images/cmp_methods/cow/';
+                        image.src = '../assets/rnb_neus/images/cmp_methods/cow/';
                         break;
                     case 3:
-                        image.src = 'assets/rnb_neus/images/cmp_methods/pot2/';
+                        image.src = '../assets/rnb_neus/images/cmp_methods/pot2/';
                         break;
                     case 4:
-                        image.src = 'assets/rnb_neus/images/cmp_methods/reading/';
+                        image.src = '../assets/rnb_neus/images/cmp_methods/reading/';
                         break;
                 }
                 switch (i) {
@@ -70,19 +75,19 @@ document.addEventListener('DOMContentLoaded', domReady);
             // Set the video source based on the specified videoNumber using a switch case
             switch (videoNumber) {
                 case 0:
-                    video.src = "assets/rnb_neus/videos/cmp/bear.mp4";
+                    video.src = "../assets/rnb_neus/videos/cmp/bear.mp4";
                     break;
                 case 1:
-                    video.src = "assets/rnb_neus/videos/cmp/buddha.mp4";
+                    video.src = "../assets/rnb_neus/videos/cmp/buddha.mp4";
                     break;
                 case 2:
-                    video.src = "assets/rnb_neus/videos/cmp/cow.mp4";
+                    video.src = "../assets/rnb_neus/videos/cmp/cow.mp4";
                     break;
                 case 3:
-                    video.src = "assets/rnb_neus/videos/cmp/pot2.mp4";
+                    video.src = "../assets/rnb_neus/videos/cmp/pot2.mp4";
                     break;
                 case 4:
-                    video.src = "assets/rnb_neus/videos/cmp/reading.mp4";
+                    video.src = "../assets/rnb_neus/videos/cmp/reading.mp4";
                     break;
             }
     
@@ -91,6 +96,46 @@ document.addEventListener('DOMContentLoaded', domReady);
 
 
             let scene_list = document.getElementById("video-changer").children;
+            for (let i = 0; i < scene_list.length; i++) {
+                if (videoNumber == i) {
+                    scene_list[i].children[0].className = "nav-link active"
+                }
+                else {
+                    scene_list[i].children[0].className = "nav-link"
+                }
+            }
+    
+        }
+
+    
+        function changeVideo2(videoNumber) {
+            // Get the video element
+            var video = document.getElementById("myVideo2");
+    
+            // Set the video source based on the specified videoNumber using a switch case
+            switch (videoNumber) {
+                case 0:
+                    video.src = "../assets/rnb_neus/videos/relighting/bear.mp4";
+                    break;
+                case 1:
+                    video.src = "../assets/rnb_neus/videos/relighting/buddha.mp4";
+                    break;
+                case 2:
+                    video.src = "../assets/rnb_neus/videos/relighting/cow.mp4";
+                    break;
+                case 3:
+                    video.src = "../assets/rnb_neus/videos/relighting/pot2.mp4";
+                    break;
+                case 4:
+                    video.src = "../assets/rnb_neus/videos/relighting/reading.mp4";
+                    break;
+            }
+    
+            // Reset the video player
+            video.load();
+
+
+            let scene_list = document.getElementById("video-changer-2").children;
             for (let i = 0; i < scene_list.length; i++) {
                 if (videoNumber == i) {
                     scene_list[i].children[0].className = "nav-link active"
