@@ -134,6 +134,10 @@ h5 {
 .row-author {
     margin: 0 70px 0 70px;
 }
+
+.col-author {
+    margin: 0 70px 0 70px;
+}
 h9 {
     font-size: 90%;
     color: #999999;
@@ -257,10 +261,39 @@ h6 {
     max-width: none;
     letter-spacing: 0pt;
     font: 95% "Inconsolata";
-    border: 2px solid #666;
+    border: 1px solid #d4d4d4;
     margin: 20px auto 20px auto;
     padding: 15px 15px 15px 15px;
-    box-shadow: 0 0 10px #FAF;
+    box-shadow: 0 0 10px gray;
+}
+
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.copy-button {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #a0a0a0;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.copy-button:hover {
+    background-color: #7c7c7c;
+}
+
+#copyMessage {
+    display: none;
+    color: green;
+}
+
+#textWithLineBreaks {
+    display: none;
 }
 
 /* for recon list */
@@ -373,7 +406,7 @@ li {
 .nav a:hover {
     color: #ffffff;
     font-weight: 500;
-    background-color: #acb9db;
+    background-color: #ffffff;
     text-decoration: none;
 }
 
@@ -382,11 +415,12 @@ li {
     color: #ff8800;
     font-weight: 500;
     text-decoration: none;
+    padding-top: 0;
 }
 
-.nav .hover-image-link img:hover {
-    transform: scale(1.1);
-  }
+.nav .hover-image-link img.first-image {
+    display: inline;
+}
 
 .nav .hover-image-link img.second-image {
     display: none;
@@ -397,7 +431,8 @@ li {
 }
 
 .nav .hover-image-link:hover img.second-image {
-    display: block;
+    display: inline;
+    background-color: #ffffff;
 }
 
 .b-dics__slider {
