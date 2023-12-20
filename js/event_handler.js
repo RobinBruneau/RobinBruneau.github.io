@@ -98,7 +98,6 @@ document.addEventListener('DOMContentLoaded', domReady);
                     scene_list[i].children[0].className = "nav-link"
                 }
             }
-
             let scene_list_2 = document.getElementById("viewChoice").children;
             for (let i = 0; i < scene_list.length; i++) {
                 if (globalView == i) {
