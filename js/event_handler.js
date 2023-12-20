@@ -1,3 +1,7 @@
+var globalModel = 1;
+var globalView = 0;
+
+
 document.addEventListener('DOMContentLoaded', domReady);
 
         function domReady() {
@@ -19,6 +23,91 @@ document.addEventListener('DOMContentLoaded', domReady);
                 hideTexts: false,
                 textPosition: "top"
             });
+
+            new Dics({
+                container: document.querySelectorAll('.b-dics')[3],
+                hideTexts: false,
+                textPosition: "top"
+            });
+        }
+
+
+        function changeView(idx){
+            globalView = idx;
+            updateVisual();
+        }
+
+        function changeModel(idx){
+            globalModel = idx;
+            updateVisual();
+        }
+
+        function updateVisual() {
+            let dics = document.querySelectorAll('.b-dics')[1]
+            let sections = dics.getElementsByClassName('b-dics__section')
+            let imagesLength = 2
+            for (let i = 0; i < imagesLength; i++) {
+                let image = sections[i].getElementsByClassName('b-dics__image-container')[0].getElementsByClassName('b-dics__image')[0]
+                switch (globalModel) {
+                    case 0:
+                        image.src = '../assets/rnb_neus/images/cmp_neus/bear/';
+                        break;
+                    case 1:
+                        image.src = '../assets/rnb_neus/images/cmp_neus/buddha/';
+                        break;
+                    case 2:
+                        image.src = '../assets/rnb_neus/images/cmp_neus/cow/';
+                        break;
+                    case 3:
+                        image.src = '../assets/rnb_neus/images/cmp_neus/pot2/';
+                        break;
+                    case 4:
+                        image.src = '../assets/rnb_neus/images/cmp_neus/reading/';
+                        break;
+                }
+                switch (i) {
+                    case 0:
+                        image.src = image.src + '/neus_';
+                        break;
+                    case 1:
+                        image.src = image.src + '/ours_';
+                        break;
+                }
+                switch (globalView) {
+                    case 0:
+                        image.src = image.src + '5.png';
+                        break;
+                    case 1:
+                        image.src = image.src + '10.png';
+                        break;
+                    case 2:
+                        image.src = image.src + '15.png';
+                        break;
+                    case 3:
+                        image.src = image.src + '20.png';
+                        break;
+                }
+            }
+
+            let scene_list = document.getElementById("modelChoice").children;
+            for (let i = 0; i < scene_list.length; i++) {
+                if (globalModel == i) {
+                    scene_list[i].children[0].className = "nav-link active"
+                }
+                else {
+                    scene_list[i].children[0].className = "nav-link"
+                }
+            }
+
+            let scene_list_2 = document.getElementById("viewChoice").children;
+            for (let i = 0; i < scene_list.length; i++) {
+                if (globalView == i) {
+                    scene_list_2[i].children[0].className = "nav-link active"
+                }
+                else {
+                    scene_list_2[i].children[0].className = "nav-link"
+                }
+            }
         }
 
         function objectSceneEvent(idx) {
