@@ -52,31 +52,31 @@
                         <a href="https://scholar.google.fr/citations?user=t9PRZ3AAAAAJ&hl=en" target="_blank">Jean Mélou</a><sup style="margin-right:10px">1</sup>
                         <a href="https://loutchoa.github.io/" target="_blank">François Lauze</a><sup style="margin-right:10px">2</sup>
                         <a href="https://www.irit.fr/~Jean-Denis.Durou/" target="_blank">Jean-Denis Durou</a><sup style="margin-right:10px">1</sup>
-                        <a href="https://scholar.google.com/citations?user=6JewdrMAAAAJ&hl=en/" target="_blank">Lilian Calvet</a><sup>4</sup>
+                        <a href="https://fr.linkedin.com/in/lilian-calvet-42b1a689" target="_blank">Lilian Calvet</a><sup>4</sup>
                     </div>
                 </div>
 
                 <div class="row" style="margin-top:0.5rem; margin-left: auto; margin-right: auto;">
                     <div class="col-md">
                         <div id="affiliation">
-                            <sup>1</sup>IRIT, University of Toulouse &nbsp;&nbsp;&nbsp;&nbsp; 
-                            <sup>2</sup>DIKU, University of Copenhagen
+                            <sup>1</sup>IRIT, University of Toulouse, France &nbsp;&nbsp;&nbsp;&nbsp; 
+                            <sup>2</sup>DIKU, University of Copenhagen, Denmark
                         </div>
                     </div>
                 </div>
                 <div class="row" style="margin-top:-1rem; margin-left: auto; margin-right: auto;">
                     <div class="col-md">
                         <div id="affiliation"> 
-                            <sup>3</sup>GREYC, University of Caen &nbsp;&nbsp;&nbsp;&nbsp; 
-                            <sup>4</sup>OR-X, Balgrist, University of Zurich
+                            <sup>3</sup>GREYC, University of Caen, France &nbsp;&nbsp;&nbsp;&nbsp; 
+                            <sup>4</sup>OR-X, Balgrist, University of Zurich, Switzerland
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!--<div id="venue">
+            <div id="venue">
                 IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2024<br><br>
-            </div>-->
+            </div>
 
             <div class="row">
                 <div class="col-md">
@@ -92,12 +92,16 @@
                             <a href="https://github.com/bbrument/RNb-NeuS/" class="hover-image-link" >
                             <image class="first-image" src="../assets/icons/github.png" width="60px"></image>
                             <image class="second-image" src="../assets/icons/github_hover.png" width="60px"></image>
-                            <h3 style="font-size: 1.2rem; padding-top: 10px;"><strong>Code(soon)</strong></h3>
+                            <h3 style="font-size: 1.2rem; padding-top: 10px;"><strong>Code</strong></h3>
                             </a>
                         </li>
                     </ul>
                 </div>
-        </div>
+            </div>
+
+            <!-- Add a sentence in bold centered saying this: /!\ A real-time CUDA implementation is coming soon. /!\ -->
+            <div class="container" style="padding-top: 20px;">
+                <p style="text-align: center; font-weight: bold; color: rgb(255, 58, 58);">A real-time CUDA implementation is coming soon.</p>
 
         </section>
     </main>
@@ -109,20 +113,54 @@
 
         <!-- Abstract -->
         <h5>Abstract</h5>
-        <p style="text-align: justify; padding-bottom: 30px;"">
+        <p style="text-align: justify; padding-bottom: 30px;">
             This paper introduces a versatile paradigm for integrating multi-view reflectance and normal maps acquired through photometric stereo. 
             Our approach employs a pixel-wise joint re-parameterization of reflectance and normal, considering them as a vector of radiances rendered 
             under simulated, varying illumination. This re-parameterization enables the seamless integration of reflectance and normal maps as input 
-            data in neural volume rendering-based 3D reconstruction while preserving a single optimization objective. In contrast,  recent multi-view 
+            data in neural volume rendering-based 3D reconstruction while preserving a single optimization objective. In contrast, recent multi-view 
             photometric stereo (MVPS) methods depend on multiple, potentially conflicting objectives. Despite its apparent simplicity, our proposed 
             approach outperforms state-of-the-art approaches in MVPS benchmarks across F-score, Chamfer distance, and mean angular error metrics. 
             Notably, it significantly improves the detailed 3D reconstruction of areas with high curvature or low visibility.
         </p>
 
+        <!-- Overview -->
+        <h5>Overview</h5>
+        <p style="text-align: justify;">
+            Overview of the proposed MVPS pipeline. The reflectance and normal maps provided for each view by PS are fused, by combining volume rendering with a pixel-wise re-parameterization of the inputs using physically-based rendering.
+        </p>
+        <div class="text-center;" style="padding-top: 30px; padding-bottom: 30px">
+            <image src="../assets/rnb_neus/images/pipeline.png" class="img-responsive" alt="intro">
+        </div>
+        <p style="text-align: justify;">
+            The proposed approach aims to infer a 3D scene model by integrating reflectance and normal maps obtained from photometric stereo (PS) across multiple viewpoints and illuminations. 
+            The input data, consisting of reflectance and normal values, is re-parameterized for 3D surface inference. 
+            The objective function minimizes the difference between simulated intensity vectors derived from input data and volume rendering, 
+            incorporating a regularization term on the signed distance function (SDF) of the surface. The reflectance and normal data are jointly 
+            re-parameterized into radiance values using a linear Lambertian model, ensuring bijectivity. The volume rendering-based 3D reconstruction 
+            employs a function to simulate intensity vectors, considering varying illumination. The optimization involves minimizing the photometric loss 
+            while enforcing regularization on the SDF, leading to a consistent and single-objective formulation for 3D surface reconstruction.
+            
+        </p>
+
 		
         <!-- Comparisons Videos -->
         <hr style="border-top: 3px double;">
-        <h5>Qualitative evaluation and comparison with state of the art </br> on the DiLiGenT-MV dataset</h5>
+        <h5>Comparisons</h5>
+
+        <h6>Comparisons of state-of-the-art methods on DiLiGenT-MV</h6>
+        <p style="text-align: justify;">
+            We compare our approach with state-of-the-art methods on the DiLiGenT-MV dataset. 
+            The quantitative comparisons are based on the F-score, Chamfer distance, and mean angular error metrics. 
+            Our approach outperforms state-of-the-art methods across all metrics, demonstrating its effectiveness in 3D reconstruction 
+            (cf. Section 5 in the paper).
+            <br></br>
+            We provide in a qualitative comparison of our results on DiLiGenT-MV, and compare them with the four most recent methods 
+            from the literature, namely <a href="https://berk95kaya.github.io/UA_MVPS_project_page/">Kaya22</a>, 
+            <a href="https://ywq.github.io/psnerf/">PS-NeRF</a>, 
+            <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Zhao_MVPSNet_Fast_Generalizable_Multi-view_Photometric_Stereo_ICCV_2023_paper.pdf">MVPSNet</a> 
+            and <a href="https://openaccess.thecvf.com/content/WACV2023/papers/Kaya_Multi-View_Photometric_Stereo_Revisited_WACV_2023_paper.pdf">Kaya23</a>. 
+        </p>
+        
         <div class="container;" style="padding-bottom: 10px;">
             <ul class="nav nav-tabs nav-fill nav-justified" id="video-changer">
                 <li class="nav-item">
@@ -152,8 +190,13 @@
 
 
         <!-- Comparisons Images -->
-        <hr style="border-top: 3px double;">
-        <h5>Image comparisons on DiLiGenT-MV</h5>
+        <!-- <hr style="border-top: 3px double;"> -->
+        <h6>Image comparisons on DiLiGenT-MV</h6>
+        <p style="text-align: justify;">
+            In comparison with two state-of-the-art deep learning-based methods, namely <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Zhao_MVPSNet_Fast_Generalizable_Multi-view_Photometric_Stereo_ICCV_2023_paper.pdf">MVPSNet</a> 
+            and <a href="https://openaccess.thecvf.com/content/WACV2023/papers/Kaya_Multi-View_Photometric_Stereo_Revisited_WACV_2023_paper.pdf">Kaya23</a>, 
+            the recovered geometry is overall more satisfactory and fine details are better preserved.
+        </p>
         <div class="container;" style=" padding-bottom: 10px;">
             <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
                 <li class="nav-item">
@@ -182,55 +225,74 @@
         </div>
 
 
-         <!-- Comparisons Images -->
-         <hr style="border-top: 3px double;">
-         <h5>NeuS vs Ours (with different number of views used for reconstruction)</h5>
-         <div class="container;" style=" padding-bottom: 10px; font-size: 0;">
-             <ul class="nav nav-tabs nav-fill nav-justified" style="font-size: 16px;" id="modelChoice">
-                 <li class="nav-item">
-                     <a class="nav-link" onclick="changeModel(0)">Bear</a>
-                 </li>
-                 <li class="nav-item">
-                     <a class="nav-link active" onclick="changeModel(1)">Buddha</a>
-                 </li>
-                 <li class="nav-item">
-                     <a class="nav-link" onclick="changeModel(2)">Cow</a>
-                 </li>
-                 <li class="nav-item">
-                     <a class="nav-link" onclick="changeModel(3)">Pot2</a>
-                 </li>
-                 <li class="nav-item">
-                     <a class="nav-link" onclick="changeModel(4)">Reading</a>
-                 </li>
-             </ul>
-             <ul class="nav nav-tabs nav-fill nav-justified" id="viewChoice">
-                <li class="nav-item" style="font-size: 16px;">
-                    <a class="nav-link active" onclick="changeView(0)">5 views</a>
+        <!-- Comparisons Images -->
+        <!-- <hr style="border-top: 3px double;"> -->
+        <h6>NeuS (mono-illumination) vs Ours (multi-illumination)</h6>
+
+        <p style="text-align: justify;">
+            We propose an additional comparison of our method against the multi-view mono-illumination 3D reconstruction method 
+            <a href="https://lingjie0206.github.io/papers/NeuS/">NeuS</a>. 
+            While NeuS is not directly applicable in multi-view multi-light acquisition settings in theory, it may become feasible under certain conditions.
+            This feasibility hinges on factors such as the number, spatial distribution and types of lighting conditions, and the object material properties. 
+            One can leverage a heuristic method such as approximating input images captured under mono-illumination for each viewpoint by taking the median of pixel 
+            intensities obtained under varying illumination (cf. supplementary material of the paper).
+            <br></br>
+            A qualitative comparison between the results of mono-illumination NeuS using this heuristic and the ones from our method 
+            is provided. As can be seen, our proposed approach provides a much finer level of details. 
+            In particular, mono-illumination NeuS requires a high number of viewpoints, with a drastic decline in the reconstruction quality when using 5 viewpoints. 
+            On the contrary, our method shows stable results, only losing some fine details over concave areas.
+        </p>
+
+        <div class="container;" style=" padding-bottom: 10px; font-size: 0;">
+            <ul class="nav nav-tabs nav-fill nav-justified" style="font-size: 16px;" id="modelChoice">
+                <li class="nav-item">
+                    <a class="nav-link" onclick="changeModel(0)">Bear</a>
                 </li>
-                <li class="nav-item" style="font-size: 16px;">
-                    <a class="nav-link" onclick="changeView(1)">10 views</a>
+                <li class="nav-item">
+                    <a class="nav-link active" onclick="changeModel(1)">Buddha</a>
                 </li>
-                <li class="nav-item" style="font-size: 16px;">
-                    <a class="nav-link" onclick="changeView(2)">15 views</a>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="changeModel(2)">Cow</a>
                 </li>
-                <li class="nav-item" style="font-size: 16px;">
-                    <a class="nav-link" onclick="changeView(3)">20 views</a>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="changeModel(3)">Pot2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="changeModel(4)">Reading</a>
                 </li>
             </ul>
-             <div class="bordered-container">
-             <div class="b-dics" style="width: 60%; font-weight: 600; margin: 0 auto;">
-                 <img src="../assets/rnb_neus/images/cmp_neus/buddha/neus_5.png" alt="NeuS">
-                 <img src="../assets/rnb_neus/images/cmp_neus/buddha/ours_5.png" alt="RNb-Neus (Ours)">
-             </div>
-             </div>
-         </div>
+            <ul class="nav nav-tabs nav-fill nav-justified" id="viewChoice">
+            <li class="nav-item" style="font-size: 16px;">
+                <a class="nav-link active" onclick="changeView(0)">5 views</a>
+            </li>
+            <li class="nav-item" style="font-size: 16px;">
+                <a class="nav-link" onclick="changeView(1)">10 views</a>
+            </li>
+            <li class="nav-item" style="font-size: 16px;">
+                <a class="nav-link" onclick="changeView(2)">15 views</a>
+            </li>
+            <li class="nav-item" style="font-size: 16px;">
+                <a class="nav-link" onclick="changeView(3)">20 views</a>
+            </li>
+        </ul>
+            <div class="bordered-container">
+            <div class="b-dics" style="width: 60%; font-weight: 600; margin: 0 auto;">
+                <img src="../assets/rnb_neus/images/cmp_neus/buddha/neus_5.png" alt="NeuS">
+                <img src="../assets/rnb_neus/images/cmp_neus/buddha/ours_5.png" alt="RNb-Neus (Ours)">
+            </div>
+            </div>
+        </div>
 
 
         <!-- Relighting video -->
-        <hr style="border-top: 3px double;">
-        <h5>Relighting with input reflectance maps</h5>
+        <!-- <hr style="border-top: 3px double;"> -->
+        <h6>Relighting with reflectance maps</h6>
+        <p style="text-align: justify;">
+            We provide videos demonstrating the relighting capabilities of our method as an additional result. 
+            The videos show the 3D reconstruction of DiLiGenT-MV objects, with the reflectance, roughness and metalness maps used as texture under varying lighting direction.
+        </p> 
         <div class="container;" style="padding-bottom: 10px; width: 70%; margin: 0 auto;">
-            <ul class="nav nav-tabs nav-fill nav-justified" id="video-changer-2">
+            <ul class="nav nav-tabs nav-fill nav-justified" id="video-changer-2">   
                 <li class="nav-item">
                     <a class="nav-link" onclick="changeVideo2(0)">Bear</a>
                 </li>
@@ -300,9 +362,7 @@
                 Robin Bruneau and
                 Yvain Quéau and
                 Jean Mélou and
-                François Lauze and <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Jean-Denis Durou and
+                François Lauze and Jean-Denis Durou and
                 Lilian Calvet},<br>
                 &nbsp;&nbsp;eprint={2312.01215},<br>
                 &nbsp;&nbsp;archivePrefix={arXiv},<br>
@@ -314,7 +374,15 @@
         <div style="text-align:center;">
             <button id="copy-button" class="copy-button" onclick="copyTextToClipboard()" >Copy</button>
         </div>
-        
+
+        <!-- Acknowledgements -->
+        <hr style="border-top: 3px double;">
+        <h5>Acknowledgements</h5>
+        <p style="text-align: justify;">
+            Baptiste Brument's doctoral student fellowship is funded by the French Ministry of Higher Education and Research.
+            Robin Bruneau's doctoral student fellowship is funded by the Danish project PHYLORAMA. This work was partly funded by the French National Research Agency through the LabCom project ALICIA-Vision.
+            Lilian Calvet's posdoctoral fellowship is supported by the OR-X - a swiss national research infrastructure for translational surgery - and associated funding by the University of Zürich and University Hospital Balgrist.
+        </p>
     </div>
 
 <div id="copyMessage">
