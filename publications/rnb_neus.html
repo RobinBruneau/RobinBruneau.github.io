@@ -125,37 +125,20 @@
 
         <!-- Overview -->
         <h5>Overview</h5>
-        <p style="text-align: justify;">
-            Overview of the proposed MVPS pipeline. The reflectance and normal maps provided for each view by PS are fused, by combining volume rendering with a pixel-wise re-parameterization of the inputs using physically-based rendering.
-        </p>
         <div class="text-center;" style="padding-top: 30px; padding-bottom: 30px">
             <image src="../assets/rnb_neus/images/pipeline.png" class="img-responsive" alt="intro">
         </div>
         <p style="text-align: justify;">
-            The proposed approach aims to infer a 3D scene model by integrating reflectance and normal maps obtained from photometric stereo (PS) across multiple viewpoints and illuminations. 
-            The input data, consisting of reflectance and normal values, is re-parameterized for 3D surface inference. 
-            The objective function minimizes the difference between simulated intensity vectors derived from input data and volume rendering, 
-            incorporating a regularization term on the signed distance function (SDF) of the surface. The reflectance and normal data are jointly 
-            re-parameterized into radiance values using a linear Lambertian model, ensuring bijectivity. The volume rendering-based 3D reconstruction 
-            employs a function to simulate intensity vectors, considering varying illumination. The optimization involves minimizing the photometric loss 
-            while enforcing regularization on the SDF, leading to a consistent and single-objective formulation for 3D surface reconstruction.
-            
+            The reflectance and normal maps provided for each view by photometric stereo (PS) are fused, by combining volume rendering with a pixel-wise re-parameterization of the inputs using physically-based rendering. 
         </p>
-
 		
         <!-- Comparisons Videos -->
         <hr style="border-top: 3px double;">
-        <h5>Comparisons</h5>
+        <h5>Results</h5>
 
-        <h6>Comparisons of state-of-the-art methods on DiLiGenT-MV</h6>
+        <h6>Comparisons on DiLiGenT-MV</h6>
         <p style="text-align: justify;">
-            We compare our approach with state-of-the-art methods on the DiLiGenT-MV dataset. 
-            The quantitative comparisons are based on the F-score, Chamfer distance, and mean angular error metrics. 
-            Our approach outperforms state-of-the-art methods across all metrics, demonstrating its effectiveness in 3D reconstruction 
-            (cf. Section 5 in the paper).
-            <br></br>
-            We provide in a qualitative comparison of our results on DiLiGenT-MV, and compare them with the four most recent methods 
-            from the literature, namely <a href="https://berk95kaya.github.io/UA_MVPS_project_page/">Kaya22</a>, 
+             Qualitative comparisons with the MVPS methods <a href="https://berk95kaya.github.io/UA_MVPS_project_page/">Kaya22</a>, 
             <a href="https://ywq.github.io/psnerf/">PS-NeRF</a>, 
             <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Zhao_MVPSNet_Fast_Generalizable_Multi-view_Photometric_Stereo_ICCV_2023_paper.pdf">MVPSNet</a> 
             and <a href="https://openaccess.thecvf.com/content/WACV2023/papers/Kaya_Multi-View_Photometric_Stereo_Revisited_WACV_2023_paper.pdf">Kaya23</a>. 
@@ -192,11 +175,6 @@
         <!-- Comparisons Images -->
         <!-- <hr style="border-top: 3px double;"> -->
         <h6>Image comparisons on DiLiGenT-MV</h6>
-        <p style="text-align: justify;">
-            In comparison with two state-of-the-art deep learning-based methods, namely <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Zhao_MVPSNet_Fast_Generalizable_Multi-view_Photometric_Stereo_ICCV_2023_paper.pdf">MVPSNet</a> 
-            and <a href="https://openaccess.thecvf.com/content/WACV2023/papers/Kaya_Multi-View_Photometric_Stereo_Revisited_WACV_2023_paper.pdf">Kaya23</a>, 
-            the recovered geometry is overall more satisfactory and fine details are better preserved.
-        </p>
         <div class="container;" style=" padding-bottom: 10px;">
             <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
                 <li class="nav-item">
@@ -230,17 +208,9 @@
         <h6>NeuS (mono-illumination) vs Ours (multi-illumination)</h6>
 
         <p style="text-align: justify;">
-            We propose an additional comparison of our method against the multi-view mono-illumination 3D reconstruction method 
-            <a href="https://lingjie0206.github.io/papers/NeuS/">NeuS</a>. 
-            While NeuS is not directly applicable in multi-view multi-light acquisition settings in theory, it may become feasible under certain conditions.
-            This feasibility hinges on factors such as the number, spatial distribution and types of lighting conditions, and the object material properties. 
-            One can leverage a heuristic method such as approximating input images captured under mono-illumination for each viewpoint by taking the median of pixel 
-            intensities obtained under varying illumination (cf. supplementary material of the paper).
-            <br></br>
-            A qualitative comparison between the results of mono-illumination NeuS using this heuristic and the ones from our method 
-            is provided. As can be seen, our proposed approach provides a much finer level of details. 
-            In particular, mono-illumination NeuS requires a high number of viewpoints, with a drastic decline in the reconstruction quality when using 5 viewpoints. 
-            On the contrary, our method shows stable results, only losing some fine details over concave areas.
+            Mono-illumination <a href="https://lingjie0206.github.io/papers/NeuS/">NeuS</a> requires a high number of viewpoints and exhibits a drastic decline in reconstruction quality with a 
+            limited number of viewpoints. Conversely, our method demonstrates stable results, 
+            benefiting from the rich reflectance and normal maps information obtained through a multi-illumination acquisition setup.     
         </p>
 
         <div class="container;" style=" padding-bottom: 10px; font-size: 0;">
@@ -288,8 +258,10 @@
         <!-- <hr style="border-top: 3px double;"> -->
         <h6>Relighting with reflectance maps</h6>
         <p style="text-align: justify;">
-            We provide videos demonstrating the relighting capabilities of our method as an additional result. 
-            The videos show the 3D reconstruction of DiLiGenT-MV objects, with the reflectance, roughness and metalness maps used as texture under varying lighting direction.
+            We provide additional results demonstrating relighting capabilities. 
+            The videos show results under varying lighting conditions, with the reflectance, 
+            roughness and metalness from <a href="https://github.com/satoshi-ikehata/SDM-UniPS-CVPR2023">SDM-UniPS</a> 
+            used to create UV maps aligned with our 3D reconstruction results.
         </p> 
         <div class="container;" style="padding-bottom: 10px; width: 70%; margin: 0 auto;">
             <ul class="nav nav-tabs nav-fill nav-justified" id="video-changer-2">   
