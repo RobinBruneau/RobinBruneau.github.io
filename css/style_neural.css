@@ -16,11 +16,7 @@ a {
     font-weight: 500;
     text-decoration: none;
 }
-a:hover {
-    color: #006d85;
-    font-style: normal;
-    text-decoration: underline;
-}
+
 /*COLOR BANNER*/
 #banner {
     text-align: center;
@@ -35,12 +31,9 @@ a:hover {
 }
 /*Authors*/
 .jumbotron a {
-    color: #4186c7;
+    color: #3267e0;
 }
 
-.jumbotron a:hover {
-    color: #ff8800;
-}
 
 .jumbotron .link{
     color: #0f3b64;
@@ -322,7 +315,7 @@ li {
 }
 
 .space-between{
-    margin: 10px;
+    margin: 30px;
 }
 
 
@@ -458,4 +451,71 @@ li {
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+.hover-image-link {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-image {
+    transition: filter 0.3s ease; /* Smooth transition for blur */
+}
+
+.hover-image-link:hover .hover-image {
+    filter: blur(10px); /* Blur effect on image */
+}
+
+/* White overlay setup */
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hover-image-link:hover .hover-overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Text styling */
+.hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.hover-image-link:hover .hover-text {
+    opacity: 1;
+}
+
+.hover-text-large {
+    font-size: 22px;
+    color: #3267e0;/* Adjust for larger text */
+    font-weight: bold;
+    margin-bottom: 15px; /* Spacing between large and small text */
+}
+
+.hover-text-small {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555555;
+
+}
+
+.classic{
+    font-size: 18px;
+    font-weight: bold;
+    color: #555555;
 }
