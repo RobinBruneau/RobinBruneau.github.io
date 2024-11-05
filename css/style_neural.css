@@ -515,14 +515,14 @@ li {
 }
 
 .hover-text-large2 {
-    font-size: 18px;
+    font-size: 20px;
     color: #3267e0;/* Adjust for larger text */
     font-weight: bold;
     margin-bottom: 15px; /* Spacing between large and small text */
 }
 
 .hover-text-small2 {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     color: #555555;
 
