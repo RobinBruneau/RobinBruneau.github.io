@@ -3,7 +3,7 @@ const modelViewerComparison2 = document.querySelector("model-viewer#modelViewerC
 
 // Initialize the selection panel images
 $('#comparisonSelectionPanel .selectable-image').each((i, img) => {
-    img.src = `../assets/texture.png`;
+    img.src = `../assets/image.png`;
 })
 
 // Set the toggle buttons
