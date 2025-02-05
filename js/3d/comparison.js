@@ -42,7 +42,7 @@ comparisonSelectionPanel.addEventListener('click', function(event) {
     const name = img.getAttribute('name');
     const baseline = document.getElementById('comparisonBaselineSelection').value;
 
-    const meshPath1 = `../assets/render2.glb`, meshPath2 = `../assets/render2.glb`;
+    const meshPath1 = `../assets/viking_rnb.glb`, meshPath2 = `../assets/viking_meshroom.glb`;
     const texturePath = `../assets/image.png`;
     
     modelViewerComparison1.src = meshPath1;
@@ -66,7 +66,7 @@ document.getElementById('comparisonBaselineSelection').addEventListener('change'
     else
         document.querySelector('#comparisonFootnote').style.opacity = `0%`;
 
-    const meshPath2 = `../assets/render2.glb`;
+    const meshPath2 = `../assets/viking_meshroom.glb`;
     const texturePath = `../assets/image.png`;
 
     modelViewerComparison2.src = meshPath2;
@@ -107,7 +107,7 @@ $(document).ready(() => {
     const name = document.querySelector('#comparisonSelectionPanel .selectable-image.selected').getAttribute('name');
     const baseline = document.getElementById('comparisonBaselineSelection').value;
     
-    const meshPath1 = `../assets/render2.glb`, meshPath2 = `../assets/render2.glb`;
+    const meshPath1 = `../assets/viking_rnb.glb`, meshPath2 = `../assets/viking_meshroom.glb`;
     const texturePath = `../assets/image.png`;
     
     modelViewerComparison1.src = meshPath1;
