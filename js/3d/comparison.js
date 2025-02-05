@@ -44,7 +44,7 @@ comparisonSelectionPanel.addEventListener('click', function(event) {
 
     const meshPath1 = `../assets/viking_rnb.glb`, meshPath2 = `../assets/viking_meshroom.glb`;
     const texturePath = `../assets/texture.png`;
-    const texturePath2 = `../assets/texture_meshroom.png`;
+    const texturePath2 = `../assets/images.png`;
     
     modelViewerComparison1.src = meshPath1;
     modelViewerComparison1.texturePath = texturePath;
@@ -64,7 +64,7 @@ document.getElementById('comparisonBaselineSelection').addEventListener('change'
     
 
     const meshPath2 = `../assets/viking_meshroom.glb`;
-    const texturePath = `../assets/texture_meshroom.png`;
+    const texturePath = `../assets/images.png`;
 
     modelViewerComparison2.src = meshPath2;
     modelViewerComparison2.texturePath = texturePath;
