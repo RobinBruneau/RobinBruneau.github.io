@@ -42,19 +42,18 @@ comparisonSelectionPanel.addEventListener('click', function(event) {
     const name = img.getAttribute('name');
     const baseline = document.getElementById('comparisonBaselineSelection').value;
 
-    const meshPath1 = `../assets/viking_rnb.glb`, meshPath2 = `../assets/viking_meshroom.glb`;
+    const meshPath1 = `../assets/cube.glb`, meshPath2 = `../assets/cube.glb`;
     const texturePath = `../assets/texture.png`;
-    const texturePath2 = `../assets/images.png`;
+    const texturePath2 = `../assets/texture_meshroom.png`;
     
     modelViewerComparison1.src = meshPath1;
     modelViewerComparison1.texturePath = texturePath;
     modelViewerComparison1.resetView();
-    //modelViewerComparison1.showPoster();
+    modelViewerComparison1.showPoster();
     
     modelViewerComparison2.src = meshPath2;
     modelViewerComparison2.texturePath = texturePath2;
     modelViewerComparison2.resetView();
-    //modelViewerComparison2.setTextured(true);
     modelViewerComparison2.showPoster();
 });
 
@@ -65,11 +64,10 @@ document.getElementById('comparisonBaselineSelection').addEventListener('change'
     
 
     const meshPath2 = `../assets/cube.glb`;
-    const texturePath = `../assets/images.png`;
+    const texturePath = `../assets/texture.png`;
 
     modelViewerComparison2.src = meshPath2;
     modelViewerComparison2.texturePath = texturePath;
-    modelViewerComparison2.setTextured(true);
     modelViewerComparison2.showPoster();
 });
 
