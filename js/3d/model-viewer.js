@@ -6,11 +6,21 @@ document.querySelectorAll('model-viewer.model-viewer-texture').forEach(
             if (isTextured !== undefined) 
                 modelViewer.isTextured = isTextured;
         
-            modelViewer.model.materials[0].pbrMetallicRoughness.setMetallicFactor(0.5);
-            modelViewer.model.materials[0].pbrMetallicRoughness.setRoughnessFactor(0.5);
-            modelViewer.model.materials[0].pbrMetallicRoughness.setBaseColorFactor([0.6, 0.6, 0.6]);
-            modelViewer.model.materials[0].pbrMetallicRoughness.baseColorTexture.setTexture(null);
-        
+            if (modelViewer.isTextured) {
+                modelViewer.model.materials[0].pbrMetallicRoughness.setMetallicFactor(0.0);
+                modelViewer.model.materials[0].pbrMetallicRoughness.setMetallicFactor(0.0);
+                modelViewer.model.materials[0].pbrMetallicRoughness.setRoughnessFactor(1.0);
+                modelViewer.model.materials[0].pbrMetallicRoughness.setBaseColorFactor([1.0, 1.0, 1.0]);
+                if (modelViewer.currentTexture) {
+                    modelViewer.model.materials[0].pbrMetallicRoughness.baseColorTexture.setTexture(modelViewer.currentTexture);
+                }
+            }
+            else {
+                modelViewer.model.materials[0].pbrMetallicRoughness.setMetallicFactor(0.5);
+                modelViewer.model.materials[0].pbrMetallicRoughness.setRoughnessFactor(0.5);
+                modelViewer.model.materials[0].pbrMetallicRoughness.setBaseColorFactor([0.6, 0.6, 0.6]);
+                modelViewer.model.materials[0].pbrMetallicRoughness.baseColorTexture.setTexture(null);
+            }
         };
 
         // Reset view
@@ -25,15 +35,6 @@ document.querySelectorAll('model-viewer.model-viewer-texture').forEach(
         modelViewer.addEventListener('load', async function() {
             modelViewer.currentTexture = await modelViewer.createTexture(modelViewer.texturePath);
             modelViewer.setTextured();
-
-            if (modelViewer.scene) {
-                modelViewer.scene.traverse((child) => {
-                    if (child.isMesh) {
-                        child.material = new THREE.MeshNormalMaterial(); // Affichage des normales
-                        child.material.needsUpdate = true;
-                    }
-                });
-            }
         });
     }
 );
