@@ -32,20 +32,20 @@ function initViewer(modelPath) {
     // Position initiale de la caméra
     camera.position.set(0, 1, 5);
 
-    // Fonction pour envoyer la position de la caméra aux autres fenêtres
+    // Fonction pour envoyer les mises à jour de caméra
     function syncCamera() {
         window.parent.postMessage({
             type: 'syncCamera',
             position: camera.position.toArray(),
-            rotation: camera.rotation.toArray()
+            quaternion: camera.quaternion.toArray()
         }, '*');
     }
 
-    // Mettre à jour la caméra depuis un autre viewer
+    // Recevoir les mises à jour de caméra
     window.addEventListener('message', (event) => {
         if (event.data.type === 'syncCamera') {
             camera.position.fromArray(event.data.position);
-            camera.rotation.fromArray(event.data.rotation);
+            camera.quaternion.fromArray(event.data.quaternion);
         }
     });
 
@@ -54,7 +54,11 @@ function initViewer(modelPath) {
         requestAnimationFrame(animate);
         controls.update();
         renderer.render(scene, camera);
-        syncCamera(); // Envoyer la position de la caméra à chaque frame
+
+        // Synchroniser seulement si la caméra a bougé
+        if (controls.update) {
+            syncCamera();
+        }
     }
     animate();
 

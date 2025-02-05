@@ -12,6 +12,23 @@
 <body>
     <iframe src="viewer1.html"></iframe>
     <iframe src="viewer2.html"></iframe>
+
+    <script>
+        const viewer1 = document.getElementById('viewer1');
+        const viewer2 = document.getElementById('viewer2');
+
+        window.addEventListener('message', (event) => {
+            if (event.data.type === 'syncCamera') {
+                // Transmettre l'événement à l'autre viewer
+                if (event.source === viewer1.contentWindow) {
+                    viewer2.contentWindow.postMessage(event.data, '*');
+                } else if (event.source === viewer2.contentWindow) {
+                    viewer1.contentWindow.postMessage(event.data, '*');
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>
 
