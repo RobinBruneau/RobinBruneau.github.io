@@ -59,8 +59,8 @@ comparisonSelectionPanel.addEventListener('click', function(event) {
 
 // Dropdown to select the baseline method
 document.getElementById('comparisonBaselineSelection').addEventListener('change', function (event) {
-    const name = document.querySelector('#comparisonSelectionPanel .selectable-image.selected').getAttribute('name');
-    const baseline = document.getElementById('comparisonBaselineSelection').value;
+    //const name = document.querySelector('#comparisonSelectionPanel .selectable-image.selected').getAttribute('name');
+    //const baseline = document.getElementById('comparisonBaselineSelection').value;
     
 
     const meshPath2 = `../assets/viking_meshroom.glb`;
