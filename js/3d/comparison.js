@@ -44,6 +44,7 @@ comparisonSelectionPanel.addEventListener('click', function(event) {
 
     const meshPath1 = `../assets/viking_rnb.glb`, meshPath2 = `../assets/viking_meshroom.glb`;
     const texturePath = `../assets/texture.png`;
+    const texturePath2 = `../assets/texture_meshroom.png`;
     
     modelViewerComparison1.src = meshPath1;
     modelViewerComparison1.texturePath = texturePath;
@@ -51,7 +52,7 @@ comparisonSelectionPanel.addEventListener('click', function(event) {
     modelViewerComparison1.showPoster();
     
     modelViewerComparison2.src = meshPath2;
-    modelViewerComparison2.texturePath = texturePath;
+    modelViewerComparison2.texturePath = texturePath2;
     modelViewerComparison2.resetView();
     modelViewerComparison2.showPoster(); 
 });
@@ -67,7 +68,7 @@ document.getElementById('comparisonBaselineSelection').addEventListener('change'
         document.querySelector('#comparisonFootnote').style.opacity = `0%`;
 
     const meshPath2 = `../assets/viking_meshroom.glb`;
-    const texturePath = `../assets/texture.png`;
+    const texturePath = `../assets/texture_meshroom.png`;
 
     modelViewerComparison2.src = meshPath2;
     modelViewerComparison2.texturePath = texturePath;
@@ -109,6 +110,7 @@ $(document).ready(() => {
     
     const meshPath1 = `../assets/viking_rnb.glb`, meshPath2 = `../assets/viking_meshroom.glb`;
     const texturePath = `../assets/texture.png`;
+    const texturePath2 = `../assets/texture_meshroom.png`;
     
     modelViewerComparison1.src = meshPath1;
     modelViewerComparison1.texturePath = texturePath;
@@ -117,7 +119,7 @@ $(document).ready(() => {
     modelViewerComparison1.showPoster();
     
     modelViewerComparison2.src = meshPath2;
-    modelViewerComparison2.texturePath = texturePath;
+    modelViewerComparison2.texturePath = texturePath2;
     modelViewerComparison2.isTextured = true;
     modelViewerComparison2.resetView();
     modelViewerComparison2.showPoster(); 
