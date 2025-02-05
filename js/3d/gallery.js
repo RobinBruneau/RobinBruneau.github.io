@@ -1,5 +1,5 @@
 const modelViewerGallary = document.querySelector('#modelViewerGallary');
-modelViewerGallary.isTextured = false;
+modelViewerGallary.isTextured = true;
 
 // Initialize the selection panel images
 $('#gallerySelectionPanel .selectable-image').each((i, img) => {
