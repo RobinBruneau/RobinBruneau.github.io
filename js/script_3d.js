@@ -1,5 +1,4 @@
 function initViewer(modelPath) {
-    // Initialisation de la scène, caméra et rendu
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -9,7 +8,6 @@ function initViewer(modelPath) {
     // Lumières
     const light = new THREE.AmbientLight(0xffffff, 1);
     scene.add(light);
-
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(5, 5, 5);
     scene.add(directionalLight);
@@ -22,50 +20,66 @@ function initViewer(modelPath) {
 
     // Charger le modèle
     const loader = new THREE.GLTFLoader();
-    loader.load(modelPath, function(gltf) {
-        const model = gltf.scene;
-        scene.add(model);
-    }, undefined, function(error) {
-        console.error('Erreur lors du chargement du modèle', error);
+    loader.load(modelPath, function (gltf) {
+        scene.add(gltf.scene);
+    }, undefined, function (error) {
+        console.error('Erreur de chargement', error);
     });
 
-    // Position initiale de la caméra
+    // Position initiale
     camera.position.set(0, 1, 5);
 
-    // Fonction pour envoyer les mises à jour de caméra
+    // Empêcher les mises à jour en boucle
+    let lastSent = { position: [], quaternion: [] };
+    let lastReceived = { position: [], quaternion: [] };
+
     function syncCamera() {
-        window.parent.postMessage({
-            type: 'syncCamera',
-            position: camera.position.toArray(),
-            quaternion: camera.quaternion.toArray()
-        }, '*');
+        const positionArray = camera.position.toArray();
+        const quaternionArray = camera.quaternion.toArray();
+
+        // Envoyer seulement si la caméra a réellement bougé
+        if (!arraysEqual(positionArray, lastSent.position) || !arraysEqual(quaternionArray, lastSent.quaternion)) {
+            lastSent = { position: positionArray, quaternion: quaternionArray };
+
+            window.parent.postMessage({
+                type: 'syncCamera',
+                position: positionArray,
+                quaternion: quaternionArray
+            }, '*');
+        }
     }
 
-    // Recevoir les mises à jour de caméra
+    // Éviter d'écraser une mise à jour locale avec une mise à jour distante
     window.addEventListener('message', (event) => {
         if (event.data.type === 'syncCamera') {
-            camera.position.fromArray(event.data.position);
-            camera.quaternion.fromArray(event.data.quaternion);
+            const newPosition = event.data.position;
+            const newQuaternion = event.data.quaternion;
+
+            if (!arraysEqual(newPosition, lastReceived.position) || !arraysEqual(newQuaternion, lastReceived.quaternion)) {
+                lastReceived = { position: newPosition, quaternion: newQuaternion };
+
+                camera.position.fromArray(newPosition);
+                camera.quaternion.fromArray(newQuaternion);
+            }
         }
     });
 
-    // Animation
     function animate() {
         requestAnimationFrame(animate);
         controls.update();
         renderer.render(scene, camera);
-
-        // Synchroniser seulement si la caméra a bougé
-        if (controls.update) {
-            syncCamera();
-        }
+        syncCamera();
     }
     animate();
 
-    // Ajuster la taille si la fenêtre change
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
+
+    // Fonction utilitaire pour comparer les tableaux
+    function arraysEqual(a, b) {
+        return a.length === b.length && a.every((val, index) => val === b[index]);
+    }
 }
