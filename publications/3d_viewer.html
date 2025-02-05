@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viewer 3D</title>
     <style>
-        body { margin: 0; }
-        canvas { display: block; }
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; gap: 20px; }
+        iframe { width: 45vw; height: 90vh; border: 1px solid #ccc; }
     </style>
 </head>
 <body>
-    <iframe src="viewer1.html"></iframe>
-    <iframe src="viewer2.html"></iframe>
+    <iframe id="viewer1" src="viewer1.html"></iframe>
+    <iframe id="viewer2" src="viewer2.html"></iframe>
 
     <script>
         const viewer1 = document.getElementById('viewer1');
