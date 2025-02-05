@@ -62,10 +62,6 @@ document.getElementById('comparisonBaselineSelection').addEventListener('change'
     const name = document.querySelector('#comparisonSelectionPanel .selectable-image.selected').getAttribute('name');
     const baseline = document.getElementById('comparisonBaselineSelection').value;
     
-    if (['metric3d_v2', 'depth_anything_v2'].includes(baseline))
-        document.querySelector('#comparisonFootnote').style.opacity = `100%`;
-    else
-        document.querySelector('#comparisonFootnote').style.opacity = `0%`;
 
     const meshPath2 = `../assets/viking_meshroom.glb`;
     const texturePath = `../assets/texture_meshroom.png`;
