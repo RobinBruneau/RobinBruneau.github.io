@@ -7,6 +7,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="../js/3d/model-viewer.js"></script>
+    <script src="../js/3d/gallery.js"></script>
+    <script src="../js/3d/selection-panel.js"></script>
+    <script src="../js/3d/comparison.js"></script>
+
     <style>
         body { display: flex; justify-content: center; align-items: center; height: 100vh; gap: 20px; }
         iframe { width: 45vw; height: 90vh; border: 1px solid #ccc; }
@@ -15,6 +20,79 @@
 <body>
     <iframe id="viewer1" src="viewer1.html"></iframe>
     <iframe id="viewer2" src="viewer2.html"></iframe>
+
+    <!-- Model Comparison. -->
+  <section class="hero">
+    <div class="hero-body" style="padding: 0;">
+      <div class="container is-max-desktop" id="comparison_container">
+        <div class="content has-text-justified" style="align-self: flex-start;">
+        </div>
+
+        <div id="toggleTexturedComparison" class="toggle-container">
+          <button class="toggle-button toggle-left">Geometry only</button>
+          <button class="toggle-button toggle-right active">Textured</button>
+        </div>
+
+        <div class="model-container" id="model-compare-wrapper">
+          <!-- Model 1 Viewer with Label -->
+          <div class="model-wrapper-comparison">
+            <div class="model-label">MoGe</div>
+            <model-viewer id="modelViewerComparison1" class="model-viewer-texture" loading="eager"
+              poster="static/images/loading.gif" touch-action="pan-y" environment-image="legacy" zoom-sensitivity="0.2"
+              camera-controls disable-tap min-camera-orbit="auto auto 1m" max-camera-orbit="auto auto 10m" interaction-prompt="none"
+              shadow-intensity="1" ar style="width: 100%; height: 100%;">
+            </model-viewer>
+          </div>
+          <!-- Model 2 Viewer with Label -->
+          <div class="model-wrapper-comparison">
+            <div class="tips-wrapper">
+              <div class="tips-icon">💡Tips</div>
+              <div class="tips-text">
+                <p>● Scroll to zoom in/out</p>
+                <p>● Drag to rotate</p>
+                <p>● Press "shift" and drag to pan</p>
+                <p>● Click on the buttons at the top to switch texture color on/off</p>
+              </div>
+            </div>
+            <div id="comparisonFootnote">
+              *No camera intrinsics prediction; using ours instead.
+            </div>
+            <select id="comparisonBaselineSelection" class="dropdown model-label">
+              <option value="dust3r">DUSt3R</option>
+              <option value="leres">LeReS</option>
+              <option value="unidepth">UniDepth</option>
+              <option value="metric3d_v2">Metric3D V2*</option>
+              <option value="depth_anything_v2">Depth Anything V2*</option>
+            </select>
+            <model-viewer id="modelViewerComparison2" class="model-viewer-texture" loading="eager"
+              poster="static/images/loading.gif" touch-action="pan-y" environment-image="legacy" zoom-sensitivity="0.2"
+              camera-controls disable-tap min-camera-orbit="auto auto 1m" max-camera-orbit="auto auto 10m" interaction-prompt="none"
+              shadow-intensity="1" ar style="width: 100%; height: 100%;">
+            </model-viewer>
+          </div>
+        </div>
+        <div class="hero-body" style="padding: 0;">
+          <div class="selection-panel" id="comparisonSelectionPanel" style="width: 90% !important; aspect-ratio: 3.8/1; margin-left: 5%;">
+            <img class="selectable-image selected" name="rabbit_cake">
+            <img class="selectable-image" name="maitreya_buddha">
+            <img class="selectable-image" name="indian_market">
+            <img class="selectable-image" name="hall">
+            <img class="selectable-image" name="city_birdview">
+            <img class="selectable-image" name="book_corridor">
+            <img class="selectable-image" name="cat_in_room">
+            <img class="selectable-image" name="taj_mahal">
+            <img class="selectable-image" name="tiny_sheep">
+            <img class="selectable-image" name="anime_girl">
+            <img class="selectable-image" name="robot_impression">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--/Model Comparison. -->
+
+
 
 
 </body>
