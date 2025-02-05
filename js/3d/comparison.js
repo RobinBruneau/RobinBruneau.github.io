@@ -49,12 +49,12 @@ comparisonSelectionPanel.addEventListener('click', function(event) {
     modelViewerComparison1.src = meshPath1;
     modelViewerComparison1.texturePath = texturePath;
     modelViewerComparison1.resetView();
-    modelViewerComparison1.showPoster();
+    //modelViewerComparison1.showPoster();
     
     modelViewerComparison2.src = meshPath2;
     modelViewerComparison2.texturePath = texturePath2;
     modelViewerComparison2.resetView();
-    modelViewerComparison2.showPoster(); 
+    //modelViewerComparison2.showPoster();
 });
 
 // Dropdown to select the baseline method
@@ -68,7 +68,7 @@ document.getElementById('comparisonBaselineSelection').addEventListener('change'
 
     modelViewerComparison2.src = meshPath2;
     modelViewerComparison2.texturePath = texturePath;
-    modelViewerComparison2.showPoster();
+    //modelViewerComparison2.showPoster();
 });
 
 // Sync the view of two model viewers
