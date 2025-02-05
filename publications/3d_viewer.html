@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../js/3d/fontawesome.all.min.css">
   <link rel="stylesheet" href="../js/3d/index.css">
   <link rel="stylesheet" href="../js/3d/selection-panel.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,15 +17,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-    <script type="module" src="../js/model-viewer.min.js"></script>
     <script src="../js/3d/jquery.min.js"></script>
     <script defer src="../js/3d/fontawesome.all.min.js"></script>
     <script src="../js/3d/bulma-carousel.min.js"></script>
     <script src="../js/3d/bulma-slider.min.js"></script>
     <script src="../js/3d/index.js"></script>  
-    <script src="../js/3d/model-viewer.js"></script>
-    <script src="../js/3d/selection-panel.js"></script>
-    <script src="../js/3d/comparison.js"></script>
+
 
     <style>
         body { display: flex; justify-content: center; align-items: center; height: 100vh; gap: 20px; }
@@ -32,8 +30,8 @@
     </style>
 </head>
 <body>
-    <iframe id="viewer1" src="viewer1.html"></iframe>
-    <iframe id="viewer2" src="viewer2.html"></iframe>
+    <!--<iframe id="viewer1" src="viewer1.html"></iframe>
+    <iframe id="viewer2" src="viewer2.html"></iframe>-->
 
     <!-- Model Comparison. -->
   <section class="hero">
@@ -43,8 +41,8 @@
         </div>
 
         <div id="toggleTexturedComparison" class="toggle-container">
-          <button class="toggle-button toggle-left">Geometry only</button>
-          <button class="toggle-button toggle-right active">Textured</button>
+          <button class="toggle-button toggle-left active">Geometry only</button>
+          <button class="toggle-button toggle-right">Textured</button>
         </div>
 
         <div class="model-container" id="model-compare-wrapper">
@@ -106,7 +104,9 @@
 
   <!--/Model Comparison. -->
 
-
+    <script src="../js/3d/model-viewer.js"></script>
+    <script src="../js/3d/selection-panel.js"></script>
+    <script src="../js/3d/comparison.js"></script>
 
 
 </body>
