@@ -17,14 +17,25 @@
         const viewer1 = document.getElementById('viewer1');
         const viewer2 = document.getElementById('viewer2');
 
+        // Shared camera data
+        const cameraState = {
+            position: new THREE.Vector3(),
+            rotation: new THREE.Quaternion()
+        };
+
+        window.addEventListener("DOMContentLoaded", () => {
+            // Send camera updates to the child windows
+            setInterval(() => {
+                viewer1.contentWindow.postMessage({ type: 'syncCamera', camera: cameraState }, '*');
+                viewer2.contentWindow.postMessage({ type: 'syncCamera', camera: cameraState }, '*');
+            }, 100); // Send updates every 100ms
+        });
+
         window.addEventListener('message', (event) => {
             if (event.data.type === 'syncCamera') {
-                // Transmettre l'événement à l'autre viewer
-                if (event.source === viewer1.contentWindow) {
-                    viewer2.contentWindow.postMessage(event.data, '*');
-                } else if (event.source === viewer2.contentWindow) {
-                    viewer1.contentWindow.postMessage(event.data, '*');
-                }
+                // Update the shared camera state from the children (if needed)
+                cameraState.position.copy(event.data.camera.position);
+                cameraState.rotation.copy(event.data.camera.rotation);
             }
         });
     </script>
