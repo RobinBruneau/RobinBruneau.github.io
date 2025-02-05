@@ -54,6 +54,7 @@ comparisonSelectionPanel.addEventListener('click', function(event) {
     modelViewerComparison2.src = meshPath2;
     modelViewerComparison2.texturePath = texturePath2;
     modelViewerComparison2.resetView();
+    modelViewerComparison2.setTextured(true);
     //modelViewerComparison2.showPoster();
 });
 
@@ -68,6 +69,7 @@ document.getElementById('comparisonBaselineSelection').addEventListener('change'
 
     modelViewerComparison2.src = meshPath2;
     modelViewerComparison2.texturePath = texturePath;
+    modelViewerComparison2.setTextured(true);
     //modelViewerComparison2.showPoster();
 });
 
