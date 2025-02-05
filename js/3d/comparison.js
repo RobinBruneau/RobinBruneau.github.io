@@ -64,7 +64,7 @@ document.getElementById('comparisonBaselineSelection').addEventListener('change'
     //const baseline = document.getElementById('comparisonBaselineSelection').value;
     
 
-    const meshPath2 = `../assets/viking_meshroom.glb`;
+    const meshPath2 = `../assets/cube.glb`;
     const texturePath = `../assets/images.png`;
 
     modelViewerComparison2.src = meshPath2;
