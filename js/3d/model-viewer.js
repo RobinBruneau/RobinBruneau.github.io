@@ -25,6 +25,15 @@ document.querySelectorAll('model-viewer.model-viewer-texture').forEach(
         modelViewer.addEventListener('load', async function() {
             modelViewer.currentTexture = await modelViewer.createTexture(modelViewer.texturePath);
             modelViewer.setTextured();
+
+            if (modelViewer.scene) {
+                modelViewer.scene.traverse((child) => {
+                    if (child.isMesh) {
+                        child.material = new THREE.MeshNormalMaterial(); // Affichage des normales
+                        child.material.needsUpdate = true;
+                    }
+                });
+            }
         });
     }
 );
