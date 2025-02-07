@@ -34,7 +34,7 @@ document.querySelectorAll('model-viewer.model-viewer-texture').forEach(
 
         modelViewer.addEventListener('load', async function() {
             modelViewer.currentTexture = await modelViewer.createTexture(modelViewer.texturePath);
-            modelViewer.setTextured();
+            modelViewer.setTextured(false);
         });
     }
 );

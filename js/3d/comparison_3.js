@@ -27,20 +27,24 @@ comparisonSelectionPanel3.addEventListener('click', function(event) {
     const meshPath1 = `../assets/rnb_neus2/comparison3/${name}/mesh_rnb_v2.glb`;
     const meshPath2 = `../assets/rnb_neus2/comparison3/${name}/mesh_rnb_v1.glb`;
     const meshPath3 = `../assets/rnb_neus2/comparison3/${name}/mesh_neus.glb`;
+    const texturePath = `../assets/white.png`;
     
     modelViewerComparison3_1.src = meshPath1;
+    modelViewerComparison3_1.texturePath = texturePath;
     modelViewerComparison3_1.isTextured = false;
     modelViewerComparison3_1.setTextured(false);
     modelViewerComparison3_1.resetView();
     modelViewerComparison3_1.showPoster();
     
     modelViewerComparison3_2.src = meshPath2;
+    modelViewerComparison3_2.texturePath = texturePath;
     modelViewerComparison3_2.isTextured = false;
     modelViewerComparison3_2.setTextured(false);
     modelViewerComparison3_2.resetView();
     modelViewerComparison3_2.showPoster(); 
 
     modelViewerComparison3_3.src = meshPath3;
+    modelViewerComparison3_3.texturePath = texturePath;
     modelViewerComparison3_3.isTextured = false;
     modelViewerComparison3_3.setTextured(false);
     modelViewerComparison3_3.resetView();
@@ -92,20 +96,24 @@ $(document).ready(() => {
     const meshPath1 = `../assets/rnb_neus2/comparison3/${name}/mesh_rnb_v2.glb`;
     const meshPath2 = `../assets/rnb_neus2/comparison3/${name}/mesh_rnb_v1.glb`;
     const meshPath3 = `../assets/rnb_neus2/comparison3/${name}/mesh_neus.glb`;
+    const texturePath = `../assets/white.png`;
     
     modelViewerComparison3_1.src = meshPath1;
+    modelViewerComparison3_1.texturePath = texturePath;
     modelViewerComparison3_1.isTextured = false;
     modelViewerComparison3_1.setTextured(false);
     modelViewerComparison3_1.resetView();
     modelViewerComparison3_1.showPoster();
     
     modelViewerComparison3_2.src = meshPath2;
+    modelViewerComparison3_2.texturePath = texturePath;
     modelViewerComparison3_2.isTextured = false;
     modelViewerComparison3_2.setTextured(false);
     modelViewerComparison3_2.resetView();
     modelViewerComparison3_2.showPoster(); 
 
     modelViewerComparison3_3.src = meshPath3;
+    modelViewerComparison3_3.texturePath = texturePath;
     modelViewerComparison3_3.isTextured = false;
     modelViewerComparison3_3.setTextured(false);
     modelViewerComparison3_3.resetView();
