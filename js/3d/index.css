@@ -54,6 +54,10 @@ body {
     font-family: 'Google Sans', sans-serif;
 }
 
+.publication-authors-main {
+  font-family: 'Google Sans', sans-serif;
+}
+
 .publication-venue {
     color: #555;
     width: fit-content;
@@ -69,6 +73,9 @@ body {
 .publication-authors {
 }
 
+.publication-authors-main {
+}
+
 .publication-authors a {
    color: hsl(204, 86%, 53%) !important;
 }
@@ -79,6 +86,10 @@ body {
 
 .publication-authors a:hover {
     text-decoration: underline;
+}
+
+.publication-authors-main a:hover {
+  text-decoration: underline;
 }
 
 .author-block {
