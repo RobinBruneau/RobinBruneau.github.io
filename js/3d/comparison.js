@@ -110,13 +110,13 @@ $(document).ready(() => {
     
     modelViewerComparison1.src = meshPath1;
     modelViewerComparison1.texturePath = texturePath;
-    modelViewerComparison1.isTextured = true;
+    modelViewerComparison1.isTextured = false;
     modelViewerComparison1.resetView();
     modelViewerComparison1.showPoster();
     
     modelViewerComparison2.src = meshPath2;
     modelViewerComparison2.texturePath = texturePath2;
-    modelViewerComparison2.isTextured = true;
+    modelViewerComparison2.isTextured = false;
     modelViewerComparison2.resetView();
     modelViewerComparison2.showPoster(); 
 });
