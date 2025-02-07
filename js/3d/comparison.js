@@ -4,6 +4,7 @@ const modelViewerComparison2 = document.querySelector("model-viewer#modelViewerC
 // Initialize the selection panel images
 $('#comparisonSelectionPanel .selectable-image').each((i, img) => {
     img.src = `../assets/image.png`;
+    img.src = `../assets/rnb_neus2/comparison/${img.getAttribute('name')}/view.png`;
 })
 
 // Set the toggle buttons
@@ -42,9 +43,12 @@ comparisonSelectionPanel.addEventListener('click', function(event) {
     const name = img.getAttribute('name');
     const baseline = document.getElementById('comparisonBaselineSelection').value;
 
-    const meshPath1 = `../assets/cube.glb`, meshPath2 = `../assets/cube.glb`;
-    const texturePath = `../assets/texture_rnb.jpg`;
-    const texturePath2 = `../assets/texture_meshroom.jpg`;
+    const meshPath1 = `../assets/rnb_neus2/comparison/${name}/rnb/mesh.glb`,
+    const texturePath = `../assets/rnb_neus2/comparison/${name}/rnb/texture.jpg`;
+
+    meshPath2 = `../assets/rnb_neus2/comparison/${name}/${baseline}/mesh.glb`;
+    texturePath2 = `../assets/rnb_neus2/comparison/${name}/${baseline}/texture.jpg`;
+
     
     modelViewerComparison1.src = meshPath1;
     modelViewerComparison1.texturePath = texturePath;
@@ -59,15 +63,15 @@ comparisonSelectionPanel.addEventListener('click', function(event) {
 
 // Dropdown to select the baseline method
 document.getElementById('comparisonBaselineSelection').addEventListener('change', function (event) {
-    //const name = document.querySelector('#comparisonSelectionPanel .selectable-image.selected').getAttribute('name');
-    //const baseline = document.getElementById('comparisonBaselineSelection').value;
+    const name = document.querySelector('#comparisonSelectionPanel .selectable-image.selected').getAttribute('name');
+    const baseline = document.getElementById('comparisonBaselineSelection').value;
     
 
-    const meshPath2 = `../assets/cube.glb`;
-    const texturePath = `../assets/texture_rnb.jpg`;
+    meshPath2 = `../assets/rnb_neus2/comparison/${name}/${baseline}/mesh.glb`;
+    texturePath2 = `../assets/rnb_neus2/comparison/${name}/${baseline}/texture.jpg`;
 
     modelViewerComparison2.src = meshPath2;
-    modelViewerComparison2.texturePath = texturePath;
+    modelViewerComparison2.texturePath = texturePath2;
     modelViewerComparison2.showPoster();
 });
 
@@ -104,9 +108,11 @@ $(document).ready(() => {
     const name = document.querySelector('#comparisonSelectionPanel .selectable-image.selected').getAttribute('name');
     const baseline = document.getElementById('comparisonBaselineSelection').value;
     
-    const meshPath1 = `../assets/viking_rnb.glb`, meshPath2 = `../assets/viking_meshroom.glb`;
-    const texturePath = `../assets/texture_rnb.jpg`;
-    const texturePath2 = `../assets/texture_meshroom.jpg`;
+    const meshPath1 = `../assets/rnb_neus2/comparison/${name}/rnb/mesh.glb`,
+    const texturePath = `../assets/rnb_neus2/comparison/${name}/rnb/texture.jpg`;
+
+    meshPath2 = `../assets/rnb_neus2/comparison/${name}/${baseline}/mesh.glb`;
+    texturePath2 = `../assets/rnb_neus2/comparison/${name}/${baseline}/texture.jpg`;
     
     modelViewerComparison1.src = meshPath1;
     modelViewerComparison1.texturePath = texturePath;
