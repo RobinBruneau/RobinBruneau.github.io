@@ -30,16 +30,19 @@ comparisonSelectionPanel3.addEventListener('click', function(event) {
     
     modelViewerComparison3_1.src = meshPath1;
     modelViewerComparison3_1.isTextured = false;
+    modelViewerComparison3_1.setTextured(false);
     modelViewerComparison3_1.resetView();
     modelViewerComparison3_1.showPoster();
     
     modelViewerComparison3_2.src = meshPath2;
     modelViewerComparison3_2.isTextured = false;
+    modelViewerComparison3_2.setTextured(false);
     modelViewerComparison3_2.resetView();
     modelViewerComparison3_2.showPoster(); 
 
     modelViewerComparison3_3.src = meshPath3;
     modelViewerComparison3_3.isTextured = false;
+    modelViewerComparison3_3.setTextured(false);
     modelViewerComparison3_3.resetView();
     modelViewerComparison3_3.showPoster();
 });
@@ -92,16 +95,19 @@ $(document).ready(() => {
     
     modelViewerComparison3_1.src = meshPath1;
     modelViewerComparison3_1.isTextured = false;
+    modelViewerComparison3_1.setTextured(false);
     modelViewerComparison3_1.resetView();
     modelViewerComparison3_1.showPoster();
     
     modelViewerComparison3_2.src = meshPath2;
     modelViewerComparison3_2.isTextured = false;
+    modelViewerComparison3_2.setTextured(false);
     modelViewerComparison3_2.resetView();
     modelViewerComparison3_2.showPoster(); 
 
     modelViewerComparison3_3.src = meshPath3;
     modelViewerComparison3_3.isTextured = false;
+    modelViewerComparison3_3.setTextured(false);
     modelViewerComparison3_3.resetView();
     modelViewerComparison3_3.showPoster();
 });
