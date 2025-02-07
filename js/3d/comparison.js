@@ -43,7 +43,7 @@ comparisonSelectionPanel.addEventListener('click', function(event) {
     const name = img.getAttribute('name');
     const baseline = document.getElementById('comparisonBaselineSelection').value;
 
-    const meshPath1 = `../assets/rnb_neus2/comparison/${name}/rnb/mesh.glb`,
+    const meshPath1 = `../assets/rnb_neus2/comparison/${name}/rnb/mesh.glb`;
     const texturePath = `../assets/rnb_neus2/comparison/${name}/rnb/texture.jpg`;
 
     meshPath2 = `../assets/rnb_neus2/comparison/${name}/${baseline}/mesh.glb`;
@@ -108,7 +108,7 @@ $(document).ready(() => {
     const name = document.querySelector('#comparisonSelectionPanel .selectable-image.selected').getAttribute('name');
     const baseline = document.getElementById('comparisonBaselineSelection').value;
     
-    const meshPath1 = `../assets/rnb_neus2/comparison/${name}/rnb/mesh.glb`,
+    const meshPath1 = `../assets/rnb_neus2/comparison/${name}/rnb/mesh.glb`;
     const texturePath = `../assets/rnb_neus2/comparison/${name}/rnb/texture.jpg`;
 
     meshPath2 = `../assets/rnb_neus2/comparison/${name}/${baseline}/mesh.glb`;
