@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Affichage Tuilé Leaflet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map { height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const tileSize = 5000;
+    const minX = 248, maxX = 254;
+    const minY = 106, maxY = 129;
+
+    const map = L.map('map', {
+      crs: L.CRS.Simple,
+      minZoom: -5,
+      maxZoom: 2,
+      zoomSnap: 0.1
+    });
+
+    const bounds = [[0, 0], [(maxY - minY + 1) * tileSize, (maxX - minX + 1) * tileSize]];
+    map.fitBounds(bounds);
+
+    function createTileLayer() {
+      return L.gridLayer({
+        tileSize: tileSize,
+        noWrap: true,
+        bounds: bounds,
+        async createTile: function(coords, done) {
+          const x = coords.x + minX;
+          const y = (maxY - coords.y);  // coordonnée inversée verticalement
+
+          const tile = document.createElement('img');
+          tile.width = tileSize;
+          tile.height = tileSize;
+
+          const imageUrl = `chunks/chunk_${x.toString().padStart(3, '0')}_${y.toString().padStart(3, '0')}_normal_map.png`;
+
+          tile.onload = () => done(null, tile);
+          tile.onerror = () => done(null, document.createElement('div'));  // vide si pas d'image
+          tile.src = imageUrl;
+
+          return tile;
+        }
+      });
+    }
+
+    createTileLayer().addTo(map);
+  </script>
+</body>
+</html>
