@@ -32,7 +32,7 @@
         tileSize: tileSize,
         noWrap: true,
         bounds: bounds,
-        async createTile: function(coords, done) {
+        createTile: function(coords, done) {
           const x = coords.x + minX;
           const y = (maxY - coords.y);  // coordonnée inversée verticalement
 
