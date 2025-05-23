@@ -177,16 +177,13 @@
     </section>
 
 
-    <!--
-    <section class="container is-max-desktop">
+
+    <section class="container is-max-desktop" style="padding-bottom:20px;">
     <div class="is-size-6 publication-authors-main" style="text-align: justify;">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Reconstruction of the Chypriote head<sup>1</sup> from the the Saint-Raymond museum. <br><br>
+        [1] <i>Assessing the Quality of 3D Reconstruction in the Absence of Ground Truth: Application to a Multimodal Archaeological Dataset </i>, Coupry et al., WACV 2025
     </div>
-  </section>-->
+  </section>
 
 
     <section class="container is-max-desktop" style="padding-bottom: 0px">
@@ -211,7 +208,7 @@
                 <div class="model-container" id="model-compare-wrapper">
 
                     <div class="model-wrapper-comparison">
-                        <div class="model-label">RNb-NeuS2 (UniMS-PS, 13 viewpoints)</div>
+                        <div class="model-label">RNb-NeuS2 (13 viewpoints)</div>
                         <model-viewer id="modelViewerComparison1" class="model-viewer-texture" loading="eager"
                                       poster="../assets/loading.gif" touch-action="pan-y" environment-image="legacy"
                                       zoom-sensitivity="0.2"
@@ -249,9 +246,12 @@
 
     <section class="container is-max-desktop" style="padding-bottom:20px;">
         <div class="is-size-6 publication-authors-main" style="text-align: justify;">
-            3D viewer of the reconstructed "Warrior head" from the Saint-Raymond museum.
-            The left view represents the reconstruction from RNb-NeuS2 (ours) using UniMS-PS normals with 13 viewpoints.
+            3D viewer of the reconstructed Warrior head from the Saint-Raymond museum.
+            The left view represents the reconstruction from RNb-NeuS2 (ours) using normals from [2] with 13 viewpoints.
             The right view corresponds to the reconstruction from Colmap using 121 viewpoints.
+            <br>
+            <br>
+            [2] <i>Self-calibrated Near-light Photometric Stereo using a Geometric Proxy </i>, Coupry et al. SSVM 2025
         </div>
     </section>
 
