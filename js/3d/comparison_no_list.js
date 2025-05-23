@@ -95,9 +95,9 @@ function logCameraOrbit(viewerId, event) {
 }
 
 // Écoutez l'événement 'camera-change' pour chaque model-viewer
-modelViewerComparison1.addEventListener('camera-change', (event) => {
-    logCameraOrbit("modelViewerComparison1", event);
-});
+//modelViewerComparison1.addEventListener('camera-change', (event) => {
+//    logCameraOrbit("modelViewerComparison1", event);
+//});
 
 
 
