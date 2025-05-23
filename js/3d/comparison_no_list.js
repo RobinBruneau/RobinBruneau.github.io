@@ -57,8 +57,8 @@ $(document).ready(() => {
     const meshPath1 = `../assets/rnb_neus2/comparison/${name}/rnb/mesh.glb`;
     const texturePath = `../assets/rnb_neus2/comparison/${name}/rnb/texture.jpg`;
 
-    meshPath2 = `../assets/rnb_neus2/comparison/${name}/colmap/mesh.glb`;
-    texturePath2 = `../assets/rnb_neus2/comparison/${name}/colmap/texture.jpg`;
+    const meshPath2 = `../assets/rnb_neus2/comparison/${name}/colmap/mesh.glb`;
+    const texturePath2 = `../assets/rnb_neus2/comparison/${name}/colmap/texture.jpg`;
     
     modelViewerComparison1.src = meshPath1;
     modelViewerComparison1.texturePath = texturePath;
