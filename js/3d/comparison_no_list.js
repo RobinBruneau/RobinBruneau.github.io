@@ -74,15 +74,24 @@ modelViewerComparison2.addEventListener('wheel', () => {syncViewWith = modelView
 // Fonction pour formater et logger l'orbite de la caméra
 function logCameraOrbit(viewerId, event) {
     const orbit = event.target.getCameraOrbit();
+    const target = event.target.getCameraTarget();
     // Le format de getCameraOrbit() est {theta: X, phi: Y, radius: Z} en radians pour theta/phi
     // On convertit en degrés pour une meilleure lisibilité
     const thetaDeg = (orbit.theta * 180 / Math.PI).toFixed(2);
     const phiDeg = (orbit.phi * 180 / Math.PI).toFixed(2);
     const radiusM = orbit.radius.toFixed(2);
 
+    const targetX = target.x.toFixed(2);
+    const targetY = target.y.toFixed(2);
+    const targetZ = target.z.toFixed(2);
+
     console.log(
         `${viewerId} Camera Orbit: theta=${thetaDeg}deg, phi=${phiDeg}deg, radius=${radiusM}m`
     );
+    console.log(
+        `${viewerId} Camera Target: X=${targetX}m, Y=${targetY}m, Z=${targetZ}m` // <-- Et ici que le target est affiché !
+    );
+    console.log('---'); // Séparateur pour une meilleure lisibilité
 }
 
 // Écoutez l'événement 'camera-change' pour chaque model-viewer
@@ -99,12 +108,12 @@ $(document).ready(() => {
 
 
     // Définir la position initiale de la caméra pour modelViewerComparison1
-    modelViewerComparison1.cameraOrbit = "0deg 90deg 1.5m"; // Exemple: vue de dessus, à 1.5m
+    modelViewerComparison1.cameraOrbit = "-36deg 92deg 1.21m"; // Exemple: vue de dessus, à 1.5m
     modelViewerComparison1.cameraTarget = "0m 0m 0m";    // Exemple: regarder un peu plus haut
     modelViewerComparison1.fieldOfView = "50deg";         // Exemple: champ de vision de 50 degrés
 
     // Vous pouvez faire de même pour modelViewerComparison2
-    modelViewerComparison2.cameraOrbit = "45deg 90deg 1.5m"; // Exemple: vue diagonale
+    modelViewerComparison2.cameraOrbit = "-36deg 92deg 1.21m"; // Exemple: vue diagonale
     modelViewerComparison2.cameraTarget = "0m 0m 0m";
     modelViewerComparison2.fieldOfView = "50deg";
 
