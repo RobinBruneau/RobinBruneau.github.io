@@ -369,6 +369,13 @@ li {
     
     margin: 0px 0 20px 0;
     box-shadow: 0 0 30px rgb(155, 155, 155);
+
+  }
+
+.bordered-container2 {
+    
+    margin: 0px 0 20px 0;
+    box-shadow: 0 0 30px rgb(155, 155, 155);
     border-radius: 15px;
 
   }
