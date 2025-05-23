@@ -23,13 +23,7 @@ toggleComparisonRightButton.addEventListener('click', function() {
 const fixedName = "viking"; // You can change this to any desired fixed name
 const fixedBaseline = "colmap"; // You can change this to any desired fixed baseline
 
-// Dropdown to select the baseline method (still present but its value is fixed for the model loading)
-document.getElementById('comparisonBaselineSelection').addEventListener('change', function (event) {
-    // This event listener will still fire, but the model loading will use the fixed values
-    console.log("Baseline selection changed, but models will load with fixed 'name' and 'baseline'.");
-    // You could optionally trigger a model reload here if needed, using the fixed values.
-    loadComparisonModels(fixedName, event.target.value); // Use the fixedName, but the selected baseline from the dropdown.
-});
+
 
 // Function to load models with given name and baseline
 function loadComparisonModels(name, baseline) {
