@@ -1,7 +1,6 @@
 const modelViewerComparison1 = document.querySelector("model-viewer#modelViewerComparison1");
 const modelViewerComparison2 = document.querySelector("model-viewer#modelViewerComparison2");
 
-
 // Set the toggle buttons
 toggleComparisonLeftButton = document.querySelector('#toggleTexturedComparison .toggle-left');
 toggleComparisonRightButton = document.querySelector('#toggleTexturedComparison .toggle-right');
@@ -20,6 +19,36 @@ toggleComparisonRightButton.addEventListener('click', function() {
     modelViewerComparison2.setTextured(true);
 });
 
+// Fixed values for name and baseline
+const fixedName = "viking"; // You can change this to any desired fixed name
+const fixedBaseline = "colmap"; // You can change this to any desired fixed baseline
+
+// Dropdown to select the baseline method (still present but its value is fixed for the model loading)
+document.getElementById('comparisonBaselineSelection').addEventListener('change', function (event) {
+    // This event listener will still fire, but the model loading will use the fixed values
+    console.log("Baseline selection changed, but models will load with fixed 'name' and 'baseline'.");
+    // You could optionally trigger a model reload here if needed, using the fixed values.
+    loadComparisonModels(fixedName, event.target.value); // Use the fixedName, but the selected baseline from the dropdown.
+});
+
+// Function to load models with given name and baseline
+function loadComparisonModels(name, baseline) {
+    const meshPath1 = `../assets/rnb_neus2/comparison/${name}/rnb/mesh.glb`;
+    const texturePath = `../assets/rnb_neus2/comparison/${name}/rnb/texture.jpg`;
+
+    const meshPath2 = `../assets/rnb_neus2/comparison/${name}/${baseline}/mesh.glb`;
+    const texturePath2 = `../assets/rnb_neus2/comparison/${name}/${baseline}/texture.jpg`;
+
+    modelViewerComparison1.src = meshPath1;
+    modelViewerComparison1.texturePath = texturePath;
+    modelViewerComparison1.resetView();
+    modelViewerComparison1.showPoster();
+
+    modelViewerComparison2.src = meshPath2;
+    modelViewerComparison2.texturePath = texturePath2;
+    modelViewerComparison2.resetView();
+    modelViewerComparison2.showPoster();
+}
 
 // Sync the view of two model viewers
 var syncViewWith = undefined;
@@ -49,24 +78,11 @@ modelViewerComparison2.addEventListener('mousedown', () => {syncViewWith = model
 modelViewerComparison2.addEventListener('wheel', () => {syncViewWith = modelViewerComparison2;});
 
 
-// Initialize the model viewer with selected model
+// Initialize the model viewer with fixed model
 $(document).ready(() => {
+    // Load models with the fixed name and baseline on document ready
+    loadComparisonModels(fixedName, fixedBaseline);
 
-    const meshPath1 = `../assets/rnb_neus2/comparison/viking/rnb/mesh.glb`;
-    const texturePath = `../assets/rnb_neus2/comparison/viking/rnb/texture.jpg`;
-
-    const meshPath2 = `../assets/rnb_neus2/comparison/viking/colmap/mesh.glb`;
-    const texturePath2 = `../assets/rnb_neus2/comparison/viking/colmap/texture.jpg`;
-    
-    modelViewerComparison1.src = meshPath1;
-    modelViewerComparison1.texturePath = texturePath;
     modelViewerComparison1.isTextured = false;
-    modelViewerComparison1.resetView();
-    modelViewerComparison1.showPoster();
-    
-    modelViewerComparison2.src = meshPath2;
-    modelViewerComparison2.texturePath = texturePath2;
     modelViewerComparison2.isTextured = false;
-    modelViewerComparison2.resetView();
-    modelViewerComparison2.showPoster(); 
 });
