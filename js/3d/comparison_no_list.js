@@ -51,14 +51,12 @@ modelViewerComparison2.addEventListener('wheel', () => {syncViewWith = modelView
 
 // Initialize the model viewer with selected model
 $(document).ready(() => {
-    const name = document.querySelector('#comparisonSelectionPanel .selectable-image.selected').getAttribute('name');
-    const baseline = document.getElementById('comparisonBaselineSelection').value;
-    
-    const meshPath1 = `../assets/rnb_neus2/comparison/${name}/rnb/mesh.glb`;
-    const texturePath = `../assets/rnb_neus2/comparison/${name}/rnb/texture.jpg`;
 
-    const meshPath2 = `../assets/rnb_neus2/comparison/${name}/colmap/mesh.glb`;
-    const texturePath2 = `../assets/rnb_neus2/comparison/${name}/colmap/texture.jpg`;
+    const meshPath1 = `../assets/rnb_neus2/comparison/viking/rnb/mesh.glb`;
+    const texturePath = `../assets/rnb_neus2/comparison/viking/rnb/texture.jpg`;
+
+    const meshPath2 = `../assets/rnb_neus2/comparison/viking/colmap/mesh.glb`;
+    const texturePath2 = `../assets/rnb_neus2/comparison/viking/colmap/texture.jpg`;
     
     modelViewerComparison1.src = meshPath1;
     modelViewerComparison1.texturePath = texturePath;
