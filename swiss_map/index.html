@@ -1,57 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <title>Affichage Tuilé Leaflet</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <style>
-    #map { height: 100vh; }
-  </style>
+    <title>Carte Leaflet avec Tuiles Personnalisées</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        #mapid { height: 700px; }
+    </style>
 </head>
 <body>
-  <div id="map"></div>
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script>
-    const tileSize = 5000;
-    const minX = 248, maxX = 254;
-    const minY = 106, maxY = 129;
+    <div id="mapid"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('mapid', {
+            crs: L.CRS.Simple, // Important pour les cartes non géographiques
+            minZoom: 0,
+            maxZoom: 5,
+        }).setView([-(50 * 36) / 2, (50 * 24) / 2], 0); // Centre initial et zoom
 
-    const map = L.map('map', {
-      crs: L.CRS.Simple,
-      minZoom: -5,
-      maxZoom: 2,
-      zoomSnap: 0.1
-    });
-
-    const bounds = [[0, 0], [(maxY - minY + 1) * tileSize, (maxX - minX + 1) * tileSize]];
-    map.fitBounds(bounds);
-
-    function createTileLayer() {
-      return L.gridLayer({
-        tileSize: tileSize,
-        noWrap: true,
-        bounds: bounds,
-        createTile: function(coords, done) {
-          const x = coords.x + minX;
-          const y = (maxY - coords.y);  // coordonnée inversée verticalement
-
-          const tile = document.createElement('img');
-          tile.width = tileSize;
-          tile.height = tileSize;
-
-          const imageUrl = `chunks/chunk_${x.toString().padStart(3, '0')}_${y.toString().padStart(3, '0')}_normal_map.png`;
-
-          tile.onload = () => done(null, tile);
-          tile.onerror = () => done(null, document.createElement('div'));  // vide si pas d'image
-          tile.src = imageUrl;
-
-          return tile;
-        }
-      });
-    }
-
-    createTileLayer().addTo(map);
-  </script>
+        L.tileLayer('tiles2/{z}/{x}/{y}.jpg', {
+            tileSize: 50,
+            noWrap: true, // Empêche la répétition de la carte
+            bounds: [
+                [-(50 * 36), 0], // Coordonnée sud-ouest
+                [0, (50 * 36)]  // Coordonnée nord-est
+            ],
+            maxNativeZoom: 3
+        }).addTo(map);
+    </script>
 </body>
 </html>

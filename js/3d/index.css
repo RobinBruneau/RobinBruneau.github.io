@@ -236,6 +236,21 @@ body {
     user-select: none;
 }
 
+/* Label box at the top-left of each model-viewer */
+.model-label_bottom {
+  position: absolute;
+  bottom: 10px; /* Changé de 'top' à 'bottom' */
+  right: 10px;
+  background-color: #b3b3b335;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  z-index: 10;
+  /* disable text selection */
+  user-select: none;
+}
+
+
 
 
 model-viewer {
@@ -607,4 +622,10 @@ model-viewer {
 
 .section-container > * {
   flex: 1 1 1000px; /* flex-grow: 1; flex-shrink: 1; flex-basis: 200px; */
+}
+
+hr.content {
+    margin-top: 0; /* Or margin: 0; to remove top and bottom margins */
+    /* If you also want to remove default browser margin-bottom for HR,
+       you can add margin-bottom: 0; or simply margin: 0; */
 }

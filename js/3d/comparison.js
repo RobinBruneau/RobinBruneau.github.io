@@ -2,10 +2,39 @@ const modelViewerComparison1 = document.querySelector("model-viewer#modelViewerC
 const modelViewerComparison2 = document.querySelector("model-viewer#modelViewerComparison2");
 
 // Initialize the selection panel images
+// Ton code existant pour définir l'image de base
 $('#comparisonSelectionPanel .selectable-image').each((i, img) => {
-    img.src = `../assets/image.png`;
+    // Stocke la source de l'image de base dans un attribut data- pour pouvoir y revenir
+    $(img).data('original-src', img.src); // Utilise jQuery .data() pour stocker la source originale
+
+    // Définis la source initiale de l'image (comme tu le fais déjà)
     img.src = `../assets/rnb_neus2/comparison/${img.getAttribute('name')}/view.png`;
-})
+});
+
+// Ajout du comportement de survol pour toutes les images sélectionnables
+$('#comparisonSelectionPanel').on('mouseover', '.selectable-image', function() {
+    const $img = $(this);
+    const hoverSrc = $img.data('hover-src') || $img.attr('data-hover-src'); // Récupère le chemin de l'image de survol
+
+    // Vérifie si une image de survol est définie
+    if (hoverSrc) {
+        // Stocke la source actuelle (l'originale) si ce n'est pas déjà fait
+        if (!$img.data('original-src')) {
+            $img.data('original-src', $img.attr('src'));
+        }
+        $img.attr('src', hoverSrc); // Change l'image pour celle de survol
+    }
+});
+
+$('#comparisonSelectionPanel').on('mouseout', '.selectable-image', function() {
+    const $img = $(this);
+    const originalSrc = $img.data('original-src'); // Récupère la source originale
+
+    // Reviens à l'image originale
+    if (originalSrc) {
+        $img.attr('src', originalSrc);
+    }
+});
 
 // Set the toggle buttons
 toggleComparisonLeftButton = document.querySelector('#toggleTexturedComparison .toggle-left');
