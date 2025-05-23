@@ -80,11 +80,11 @@ $(document).ready(() => {
 
     // Définir la position initiale de la caméra pour modelViewerComparison1
     modelViewerComparison1.cameraOrbit = "0deg 90deg 1.5m"; // Exemple: vue de dessus, à 1.5m
-    modelViewerComparison1.cameraTarget = "0m 0.5m 0m";    // Exemple: regarder un peu plus haut
+    modelViewerComparison1.cameraTarget = "0m 0m 0m";    // Exemple: regarder un peu plus haut
     modelViewerComparison1.fieldOfView = "50deg";         // Exemple: champ de vision de 50 degrés
 
     // Vous pouvez faire de même pour modelViewerComparison2
-    modelViewerComparison2.cameraOrbit = "0deg 90deg 1.5m"; // Exemple: vue diagonale
+    modelViewerComparison2.cameraOrbit = "45deg 90deg 1.5m"; // Exemple: vue diagonale
     modelViewerComparison2.cameraTarget = "0m 0m 0m";
     modelViewerComparison2.fieldOfView = "50deg";
 
