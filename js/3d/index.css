@@ -675,3 +675,114 @@ hr.content {
     z-index: initial;
 }
 
+
+.image-wrapper1 {
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Ajout d'opacity pour la transition */
+    cursor: pointer;
+    position: relative; /* Ajouté pour le z-index au survol */
+}
+
+.image-wrapper1 img {
+    display: block;
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-wrapper2 {
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Ajout d'opacity pour la transition */
+    cursor: pointer;
+    position: relative; /* Ajouté pour le z-index au survol */
+}
+
+.image-wrapper2 img {
+    display: block;
+    width: 105px;
+    height: 75px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-wrapper3 {
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Ajout d'opacity pour la transition */
+    cursor: pointer;
+    position: relative; /* Ajouté pour le z-index au survol */
+}
+
+.image-wrapper3 img {
+    display: block;
+    width: 105px;
+    height: 75px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Styles pour les images non survolées lorsque l'une d'elles est survolée */
+.image-gallery-container:hover .image-wrapper1:not(:hover) {
+    transform: scale(1.0); /* Réduit légèrement les images non survolées */
+    /* Assurez-vous que le z-index est inférieur ou nul pour les éléments non survolés */
+    z-index: 1;
+}
+
+/* Optionnel: si vous voulez un effet plus fluide quand on quitte le conteneur */
+.image-gallery-container:not(:hover) .image-wrapper1 {
+    transform: scale(1);
+    z-index: initial;
+}
+
+/* Styles pour les images non survolées lorsque l'une d'elles est survolée */
+.image-gallery-container:hover .image-wrapper2:not(:hover) {
+    transform: scale(1.0); /* Réduit légèrement les images non survolées */
+    /* Assurez-vous que le z-index est inférieur ou nul pour les éléments non survolés */
+    z-index: 1;
+}
+
+/* Optionnel: si vous voulez un effet plus fluide quand on quitte le conteneur */
+.image-gallery-container:not(:hover) .image-wrapper2 {
+    transform: scale(1);
+    z-index: initial;
+}
+
+/* Styles pour les images non survolées lorsque l'une d'elles est survolée */
+.image-gallery-container:hover .image-wrapper3:not(:hover) {
+    transform: scale(1.0); /* Réduit légèrement les images non survolées */
+    /* Assurez-vous que le z-index est inférieur ou nul pour les éléments non survolés */
+    z-index: 1;
+}
+
+/* Optionnel: si vous voulez un effet plus fluide quand on quitte le conteneur */
+.image-gallery-container:not(:hover) .image-wrapper3 {
+    transform: scale(1);
+    z-index: initial;
+}
+
+/* Styles pour le survol de l'image individuelle */
+.image-wrapper1:hover { /* Utilisez :hover directement ici */
+    transform: scale(5); /* Agrandit l'image wrapper au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+    z-index: 10; /* Met l'image survolée au-dessus des autres */
+}
+
+/* Styles pour le survol de l'image individuelle */
+.image-wrapper2:hover { /* Utilisez :hover directement ici */
+    transform: scale(5); /* Agrandit l'image wrapper au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+    z-index: 10; /* Met l'image survolée au-dessus des autres */
+}
+
+/* Styles pour le survol de l'image individuelle */
+.image-wrapper3:hover { /* Utilisez :hover directement ici */
+    transform: scale(5); /* Agrandit l'image wrapper au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+    z-index: 10; /* Met l'image survolée au-dessus des autres */
+}
