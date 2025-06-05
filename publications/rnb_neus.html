@@ -24,6 +24,81 @@
     <link href="../neural/css?family=IBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
     <link href="../neural/css-1?family=Inconsolata:300,400,500,600,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/style_neural.css">
+    <style>
+        .section-divider {
+            border: 0;
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 50px 0;
+        }
+        .announcement-box {
+            background-color: #b1b6bb;
+            /* Dark grey, inspired by screenshot */
+            border: 1px solid #444c56;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px auto;
+            text-align: center;
+            max-width: 90%;
+        }
+        .announcement-box h2 {
+            color: #2a2e31;
+            /* Light text color */
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .announcement-box p {
+            color: #30373d;
+            /* Lighter text color */
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        .announcement-box .btn-group a {
+            background-color: #373e47;
+            color: #cdd9e5;
+            border: 1px solid #545d68;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+        .announcement-box .btn-group a:hover {
+            background-color: #444c56;
+            transform: translateY(-2px);
+        }
+        #copy-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+        #copy-button:hover {
+            background-color: #0056b3;
+        }
+        .styled-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px 5px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            color: #343a40;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+            background-color: #f8f9fa;
+        }
+        .styled-btn:hover {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+    </style>
 </head>
 
 <body lang="en">
@@ -99,12 +174,24 @@
                 </div>
             </div>
 
-            <!-- Add a sentence in bold centered saying this: /!\ A real-time CUDA implementation is coming soon. /!\ -->
+            <div class="container">
+                <div class="announcement-box">
+                    <h2>✨ RNb-NeuS2 is now available! ✨</h2>
+                    <p class="text-center">A new and improved version of this project has been released, featuring a <strong style="color: #e8535f;">100x faster CUDA implementation</strong>.</p>                    <div class="btn-group">
+                        <a href="https://robinbruneau.github.io/publications/rnb_neus2.html">🌐 Project Page</a>
+                        <a href="https://arxiv.org/abs/2506.04115">📄 arXiv Paper</a>
+                        <a href="https://github.com/RobinBruneau/RNb-NeuS2">💻 CUDA Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add a sentence in bold centered saying this: /!\ A real-time CUDA implementation is coming soon. /!\
             <div class="container" style="padding-top: 20px;">
-                <p style="text-align: center; font-weight: bold; color: rgb(255, 58, 58);">A CUDA implementation (100x faster) is now available:</p>
+                <p style="text-align: center; font-weight: bold; color: rgb(255, 58, 58);">A CUDA implementation (100x faster) is now available:</p> -->
 
+            
 
-	    <div class="row">
+        <!-- <div class="row">
                 <div class="col-md">
                     <ul class="nav nav-pills">
                         <li style="padding-top: 10px;"  class="space-between">
@@ -116,7 +203,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
 		    
         </section>
     </main>
@@ -305,39 +392,6 @@
             </div>
         </div>
 
-  
-        
-        <!--
-        <hr style="border-top: 3px double;">
-        <h5>Approach</h5>
-        <div class="container; padding-bottom: 10px;">
-            <div>
-                RNb-Neus builds on top of <a href="https://lingjie0206.github.io/papers/NeuS/">SDF-based volume rendering</a>.
-            </div>
-
-            <div>
-                <br>
-                <h6 style="margin-bottom: 30px;">1.&nbsp;&nbsp;Overview</h6>
-
-                <p style="text-align: justify;"">
-                    Given multi-view and multi-light images of an object acquired from N sparse views, 
-                    our proposed methodology employs a two-step process. Initially, it utilizes a Photometric 
-                    Stereo (PS) solution—specifically, SDM-UniPS as detailed in our paper—to derive reflectance 
-                    and albedo maps. Subsequently, we leverage this information to generate simulated data adhering 
-                    to a purely Lambertian model. The subsequent step involves the application of the NeuS architecture.
-                    This architecture facilitates volume rendering employing a Lambertian approach by utilizing the 
-                    normals of the Neural Signed Distance Function (SDF) alongside a network that predicts albedo at 
-                    any spatial point. The optimization process involves minimizing the disparity between our simulated 
-                    images and the rendered images, ultimately yielding a refined Neural SDF that accurately represents 
-                    the object under consideration.
-                </p>
-                
-                <div class="text-center;"" style="padding-top: 30px; padding-bottom: 30px">
-                    <image src="../assets/rnb_neus/images/pipeline.png" class="img-responsive padding-top: 100px" alt="overview">
-                </div>
-            </div>
-        </div>
-		-->
 
         <!-- Citation -->
         <hr style="border-top: 3px double;">
@@ -345,7 +399,7 @@
         <div class="row">
             <div id="citation">
                 @inproceedings{Brument24,<br>
-                &nbsp;&nbsp;title={RNb-NeuS: Reflectance and Normal-based Multi-View 3D Reconstruction},<br>
+                &nbsp;&nbsp;title={{RNb-NeuS: Reflectance and Normal-based Multi-View 3D Reconstruction}},<br>
                 &nbsp;&nbsp;author={Baptiste Brument and
                 Robin Bruneau and
                 Yvain Quéau and
@@ -371,36 +425,33 @@
         </p>
     </div>
 
-<div id="copyMessage">
-    @inproceedings{Brument24,
-        title={RNb-NeuS: Reflectance and Normal-based Multi-View 3D Reconstruction},
+    <div id="copyMessage" style="display:none;">@inproceedings{Brument24,
+        title={{RNb-NeuS: Reflectance and Normal-based Multi-View 3D Reconstruction}},
         author={Baptiste Brument and Robin Bruneau and Yvain Quéau and Jean Mélou and François Lauze and Jean-Denis Durou and Lilian Calvet},
         booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
         year={2024}
-    }
-</div>
-
-        <script>  
-            function copyTextToClipboard() {
-                // Get the text with line breaks
-                const textWithLineBreaks = document.getElementById('copyMessage').innerHTML;
-
-                // Copy the text to the clipboard
-                navigator.clipboard.writeText(textWithLineBreaks)
-                    .then(() => {
-                        // Optionally, provide some feedback to the user
-                        document.getElementById('copy-button').style.backgroundColor = 'green';
-                        document.getElementById('copy-button').textContent = 'Copied';
-                    })
-                    .catch(err => {
-                        console.error('Unable to copy text to clipboard', err);
-                    });
-                }
-        </script>
-
-
-    </div>
-
-</body>
-
-</html>
+    }</div>
+    
+            <script>  
+                function copyTextToClipboard() {
+                    const textToCopy = document.getElementById('copyMessage').textContent;
+                    const copyButton = document.getElementById('copy-button');
+    
+                    navigator.clipboard.writeText(textToCopy)
+                        .then(() => {
+                            copyButton.style.backgroundColor = '#28a745';
+                            copyButton.textContent = 'Copied!';
+                            setTimeout(() => {
+                                copyButton.style.backgroundColor = '#007bff';
+                                copyButton.textContent = 'Copy Citation';
+                            }, 2000); 
+                        })
+                        .catch(err => {
+                            console.error('Unable to copy text to clipboard', err);
+                            copyButton.textContent = 'Error';
+                        });
+                    }
+            </script>
+        </div>
+    </body>
+    </html>
