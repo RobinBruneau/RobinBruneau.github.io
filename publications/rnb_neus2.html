@@ -3,14 +3,13 @@
 <head>
 
 
-
     <link rel="stylesheet" href="../js/3d/bulma.min.css">
-  <link rel="stylesheet" href="../js/3d/bulma-carousel.min.css">
-  <link rel="stylesheet" href="../js/3d/bulma-slider.min.css">
-  <link rel="stylesheet" href="../js/3d/fontawesome.all.min.css">
-  <link rel="stylesheet" href="../js/3d/index.css">
-  <link rel="stylesheet" href="../js/3d/selection-panel.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="../js/3d/bulma-carousel.min.css">
+    <link rel="stylesheet" href="../js/3d/bulma-slider.min.css">
+    <link rel="stylesheet" href="../js/3d/fontawesome.all.min.css">
+    <link rel="stylesheet" href="../js/3d/index.css">
+    <link rel="stylesheet" href="../js/3d/selection-panel.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,15 +17,15 @@
 
 
     <script>
-      window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+        function gtag() {
+          dataLayer.push(arguments);
+        }
 
-      gtag('js', new Date());
+        gtag('js', new Date());
 
-      gtag('config', 'G-PYVRSFMDRL');
+        gtag('config', 'G-PYVRSFMDRL');
     </script>
     <script type="module" src="../js/3d/model-viewer.min.js"></script>
 
@@ -37,7 +36,7 @@
     <script defer src="../js/3d/fontawesome.all.min.js"></script>
     <script src="../js/3d/bulma-carousel.min.js"></script>
     <script src="../js/3d/bulma-slider.min.js"></script>
-    <script src="../js/3d/index.js"></script>  
+    <script src="../js/3d/index.js"></script>
 
 
     <style>
@@ -51,68 +50,80 @@
 
 
 <div class="section-container">
-  <section class="hero">
-    <div class="hero-body" style="padding-bottom: 0px">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title">RNb-NeuS2: <span class="title is-3 publication-title">Multi-View Surface Reconstruction<br>Using Normal and Reflectance Cues</span></h1>
-            <div class="is-size-5 publication-authors-main">
-              <span class="author-block"><a href="../index.html">Robin Bruneau</a><sup>1,*</sup></span>
-              <span class="author-block">&nbsp</span>
-              <span class="author-block"><a href="https://bbrument.github.io/">Baptiste Brument</a><sup>2,*</sup></span>
-            </div>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><a href="https://yqueau.github.io/">Yvain Quéau</a><sup>3</sup></span>
-              <span class="author-block">&nbsp</span>
-              <span class="author-block"><a href="https://scholar.google.fr/citations?user=t9PRZ3AAAAAJ&hl=en">Jean Mélou</a><sup>2</sup></span>
-              <span class="author-block">&nbsp</span>
-              <span class="author-block"><a href="https://loutchoa.github.io/">François Lauze</a><sup>4</sup></span>
-              <span class="author-block">&nbsp</span>
-              <span class="author-block"><a href="https://www.irit.fr/~Jean-Denis.Durou/">Jean-Denis Durou</a><sup>2</sup></span>
-              <span class="author-block">&nbsp</span>
-              <span class="author-block"><a href="https://fr.linkedin.com/in/lilian-calvet-42b1a689">Lilian Calvet</a><sup>5</sup></span>
-            </div>
+    <section class="hero">
+        <div class="hero-body" style="padding-bottom: 0px">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-2 publication-title">RNb-NeuS2: <span class="title is-3 publication-title">Multi-View Surface Reconstruction<br>Using Normal and Reflectance Cues</span>
+                        </h1>
+                        <div class="is-size-5 publication-authors-main">
+                            <span class="author-block"><a href="../index.html">Robin Bruneau</a><sup>1,*</sup></span>
+                            <span class="author-block">&nbsp</span>
+                            <span class="author-block"><a href="https://bbrument.github.io/">Baptiste Brument</a><sup>2,*</sup></span>
+                        </div>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><a
+                                    href="https://yqueau.github.io/">Yvain Quéau</a><sup>3</sup></span>
+                            <span class="author-block">&nbsp</span>
+                            <span class="author-block"><a
+                                    href="https://scholar.google.fr/citations?user=t9PRZ3AAAAAJ&hl=en">Jean Mélou</a><sup>2,4</sup></span>
+                            <span class="author-block">&nbsp</span>
+                            <span class="author-block"><a
+                                    href="https://loutchoa.github.io/">François Lauze</a><sup>5</sup></span>
+                            <span class="author-block">&nbsp</span>
+                            <span class="author-block"><a
+                                    href="https://cv.hal.science/jean-denis-durou/">Jean-Denis Durou</a><sup>2</sup></span>
+                            <span class="author-block">&nbsp</span>
+                            <span class="author-block"><a href="https://fr.linkedin.com/in/lilian-calvet-42b1a689">Lilian Calvet</a><sup>6</sup></span>
+                        </div>
 
 
+                        <div class="is-size-6 publication-authors" style=" padding-top: 20px;">
+                            <span class="author-block"><sup>1</sup>DQBM, University of Zurich</span>
+                            <span class="author-block">&nbsp &nbsp</span>
+                            <span class="author-block"><sup>2</sup>IRIT, University of Toulouse</span>
+                        </div>
+                        <div class="is-size-6 publication-authors">
+                            <span class="author-block"><sup>3</sup>GREYC, University of Caen</span>
+                            <span class="author-block">&nbsp &nbsp</span>
+                            <span class="author-block"><sup>4</sup>FittingBox, Toulouse, France</span> 
+                        </div>
+                        <div class="is-size-6 publication-authors">
+                            <span class="author-block"><sup>5</sup>DIKU, University of Copenhagen</span>
+                            <span class="author-block">&nbsp &nbsp</span>
+                            <span class="author-block"><sup>6</sup>OR-X, Balgrist, University of Zurich</span>
+                        </div>
 
-            <div class="is-size-6 publication-authors" style=" padding-top: 20px;">
-              <span class="author-block"><sup>1</sup>DQBM, University of Zurich</span>
-              <span class="author-block">&nbsp &nbsp</span>
-              <span class="author-block"><sup>2</sup>IRIT, University of Toulouse</span>
-            </div>
-            <div class="is-size-6 publication-authors">
-              <span class="author-block"><sup>3</sup>GREYC, University of Caen</span>
-              <span class="author-block">&nbsp &nbsp</span>
-              <span class="author-block"><sup>4</sup>DIKU, University of Copenhagen</span>
-            </div>
-            <div class="is-size-6 publication-authors">
-              <span class="author-block"><sup>5</sup>OR-X, Balgrist, University of Zurich</span>
-            </div>
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- PDF Link.
+                                <span class="link-block">
+                                  <a href="" onclick="return false;" class="external-link button is-normal is-rounded is-gray" target="_blank">
+                                    <span class="icon">
+                                      <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg>
+                                    </span>
+                                    <span>Paper</span>
+                                  </a>
+                                </span> -->
 
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- PDF Link.
-                <span class="link-block">
-                  <a href="" onclick="return false;" class="external-link button is-normal is-rounded is-gray" target="_blank">
+                                <span class="link-block">
+                  <a href="https://github.com/RobinBruneau/RNb-NeuS2"
+                     class="external-link button is-normal is-rounded is-dark" target="_blank">
                     <span class="icon">
-                      <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span> -->
-
-                <span class="link-block">
-                  <a href="https://github.com/RobinBruneau/RNb-NeuS2" class="external-link button is-normal is-rounded is-dark" target="_blank">
-                    <span class="icon">
-                      <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                      <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
+                           data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor"
+                                                                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+                        <!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
                     </span>
                     <span>Code</span>
                   </a>
                 </span>
 
-                <span class="link-block">
-                  <a href="" onclick="return false;" class="external-link button is-normal is-rounded is-gray" target="_blank">
+                                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2506.04115" class="external-link button is-normal is-rounded is-gray"
+                     target="_blank">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
@@ -120,233 +131,452 @@
                   </a>
                 </span>
 
-                
+                                <span class="link-block">
+                  <a href="https://drive.google.com/file/d/1KDfCKediXNP5Os954TL_QldaUWS0nKcD/view" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">
+                      <i class="ai ai-obp"></i>
+                    </span>
+                    <span>Supp. Mat.</span>
+                  </a>
+                </span>
 
-              </div>
 
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-    <section class="container is-max-desktop">
-  <hr class="content " style="border-top: 3px double;">
-  <div class="is-size-5 publication-authors-main" style="text-align: center;">
-    <b> Abstract </b>
-  </div>
-      <div class="is-size-6 publication-authors-main" style="text-align: justify; padding-top:30px">
-      Achieving high-fidelity 3D surface reconstruction while preserving fine details remains challenging,
-      especially in the presence of materials  with complex reflectance properties and without a dense-view setup.
-      In this paper, we introduce a versatile framework that integrates multi-view normal and optionally reflectance
-      maps into radiance-based surface reconstruction. Our approach employs a pixel-wise joint re-parameterization of
-      reflectance and surface normals, representing them as a vector of radiances under simulated, varying illumination.
-      This formulation enables seamless integration into standard surface reconstruction pipelines, such as traditional
-      multi-view stereo (MVS) frameworks or modern neural volume rendering ones. Combined with the latter, our approach
-      achieves state-of-the-art performance on both multi-view photometric stereo (MVPS) and multi-view stereo (MVS)
-      benchmark datasets, including DiLiGenT-MV, LUCES-MV, Skoltech3D, and DTU. In particular, our method excels in
-      reconstructing fine-grained details and handling challenging visibility conditions. The present paper is an
-      extended version of the earlier conference paper by <a href="./rnb_neus.html">Brument et al. </a>(CVPR 2024), featuring an accelerated and more robust algorithm as well as
-      a broader empirical evaluation.
-      </div>
-</section>
-
-
-  <section class="container is-max-desktop" style="padding-bottom: 30px">
-  <hr class="content has-text-justified" style="border-top: 3px double;">
-  <div class="is-size-5 publication-authors-main" style="text-align: center;">
-    <b> Advantages of Multi-illumination for Multi-view 3D Surface Reconstruction </b>
-  </div>
-</section>
-
-
-  <section class="hero" style="padding-top:30px align-self:">
-    <div class="hero-body" style="padding: 0;">
-      <div class="container is-max-desktop" id="comparison_container2">
-        <div class="content has-text-justified" style="align-self:;">
-          <video id="myVideo" width="100%" class="approach_video" controls="" autoplay="" muted="" loop="" style="border-radius: 15px; overflow: hidden;">
-                    <source  src="../assets/rnb_neus2/videos/chypre.mp4" type="video/mp4">
-          </video>
+    <section class="container is-max-desktop" style="padding-bottom:20px ">
+        <hr class="content " style="border-top: 3px double;">
+        <div class="is-size-5 publication-authors-main" style="text-align: center;">
+            <b> Abstract </b>
         </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!--
-  <section class="container is-max-desktop">
-  <div class="is-size-6 publication-authors-main" style="text-align: justify;">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </div>
-</section>-->
-
-
-  
-  <section class="hero">
-    <div class="hero-body" style="padding: 0;">
-      <div class="container is-max-desktop" id="comparison_container">
-        <div class="content has-text-justified">
+        <div class="is-size-6 publication-authors-main" style="text-align: justify; padding-top:30px">
+            Achieving high-fidelity 3D surface reconstruction while preserving fine details remains challenging,
+            especially in the presence of materials  with complex reflectance properties and without a dense-view
+            setup. In this paper, we introduce a versatile framework that integrates multi-view normal and optionally
+            reflectance maps into radiance-based surface reconstruction. Our approach employs a pixel-wise
+            joint re-parameterization of reflectance and surface normals, representing them as a vector of
+            radiances under simulated, varying illumination. This formulation enables seamless integration
+            into standard surface reconstruction pipelines, such as traditional multi-view stereo (MVS)
+            frameworks or modern neural volume rendering ones. Combined with the latter, our approach
+            achieves state-of-the-art performance on multi-view photometric stereo (MVPS) benchmark datasets,
+            including DiLiGenT-MV, LUCES-MV and Skoltech3D. In particular, our method excels in reconstructing
+            fine-grained details and handling challenging visibility conditions. The present paper is an extended
+            version of the earlier conference paper by <a href="./rnb_neus.html">Brument et al. </a> <a id="ref1" href="#cit1">[1]</a>, featuring an accelerated and more robust algorithm as well as
+            a broader empirical evaluation.
         </div>
+    </section>
 
-        <div id="toggleTexturedComparison" class="toggle-container">
-          <button class="toggle-button toggle-left active">Geometry only</button>
-          <button class="toggle-button toggle-right">Textured</button>
-        </div>
 
-        <div class="model-container" id="model-compare-wrapper">
-
-          <div class="model-wrapper-comparison">
-            <div class="model-label">RNb-NeuS2</div>
-            <div class="model-label_bottom">🌍 Warrior head from the Saint-Raymond museum</div>
-            <model-viewer id="modelViewerComparison1" class="model-viewer-texture" loading="eager"
-              poster="../assets/loading.gif" touch-action="pan-y" environment-image="legacy" zoom-sensitivity="0.2"
-              camera-controls disable-tap min-camera-orbit="auto auto 1m" max-camera-orbit="auto auto 10m" interaction-prompt="none"
-              shadow-intensity="1" ar style="width: 100%; height: 100%;">
-            </model-viewer>
-          </div>
-
-          <div class="model-wrapper-comparison">
-            <div class="tips-wrapper">
-              <div class="tips-icon">💡Tips</div>
-              <div class="tips-text">
-                <p>● Scroll to zoom in/out</p>
-                <p>● Drag to rotate</p>
-                <p>● Press "shift" and drag to pan</p>
-                <p>● Click on the buttons at the top to switch texture color on/off</p>
-              </div>
-            </div>
-            <select id="comparisonBaselineSelection" class="dropdown model-label">
-              <option value="meshroom">Meshroom</option>
-              <option value="Colmap">Colmap</option>
-              <option value="Reality Capture">Reality Capture</option>
-            </select>
-            <model-viewer id="modelViewerComparison2" class="model-viewer-texture" loading="eager"
-              poster="../assets/loading.gif" touch-action="pan-y" environment-image="legacy" zoom-sensitivity="0.2"
-              camera-controls disable-tap min-camera-orbit="auto auto 1m" max-camera-orbit="auto auto 10m" interaction-prompt="none"
-              shadow-intensity="1" ar style="width: 100%; height: 100%;">
-            </model-viewer>
-          </div>
-        </div>
+    <section class="hero" style="padding-top:30px align-self:">
         <div class="hero-body" style="padding: 0;">
-          <div class="selection-panel" id="comparisonSelectionPanel" style="width: 90% !important; aspect-ratio: 3.8/1; margin-left: 5%;">
-            <img class="selectable-image selected" name="viking" data-hover-src="../assets/rnb_neus2/comparison/viking/hover_view.png">
-
-
-          </div>
+            <div class="container is-max-desktop" id="comparison_container2">
+                <div class="content has-text-justified" style="align-self:;">
+                    <video id="myVideo" width="100%" class="approach_video" controls="" autoplay="" muted="" loop=""
+                           style="border-radius: 15px; overflow: hidden;">
+                        <source src="../assets/rnb_neus2/videos/chypre.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
+
+
+
+    <section class="container is-max-desktop" style="padding-bottom:20px;">
+    <div class="is-size-6 publication-authors-main" style="text-align: justify;">
+      Reconstruction of the <i>Cypriot Woman's Head with Calathos</i><sup>1</sup> from the
+        <a href="https://saintraymond.toulouse.fr/">Musée Saint-Raymond</a> (Toulouse, France) with normals
+        estimated via <a id="ref2" href="#cit2">[2]</a>. <br><br>
     </div>
   </section>
 
-  <!--
-  <section class="container is-max-desktop" style="padding-bottom: 30px">
-    <hr class="content has-text-justified" style="border-top: 3px double;">
-     <div class="is-size-5 publication-authors-main" style="text-align: center;">
-    <b> Results on the DiLiGenT-MV dataset </b>
-  </div>
-  </section>
+
+    <section class="container is-max-desktop" style="padding-bottom: 0px">
+        <hr class="content has-text-justified" style="border-top: 3px double;">
+        <div class="is-size-5 publication-authors-main" style="text-align: center;">
+            <b> Reconstructing High-Frequency Surface Details from Sparse Views </b>
+        </div>
+    </section>
 
 
-  <div class="container;" style=" padding-bottom: 10px;">
-            <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
-                <li class="nav-item">
-                    <a class="nav-link" onclick="objectSceneEvent(0)">Bear</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" onclick="objectSceneEvent(1)">Buddha</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" onclick="objectSceneEvent(2)">Cow</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" onclick="objectSceneEvent(3)">Pot2</a>
-                </li>
-				<li class="nav-item">
-                    <a class="nav-link" onclick="objectSceneEvent(4)">Reading</a>
-                </li>
-            </ul>
-            <div class="bordered-container">
+    <section class="hero">
+        <div class="hero-body" style="padding: 0;">
+            <div class="container is-max-desktop" id="comparison_container">
+                <div class="content has-text-justified">
+                </div>
+
+                <div id="toggleTexturedComparison" class="toggle-container">
+                    <button class="toggle-button toggle-left active">Geometry only</button>
+                    <button class="toggle-button toggle-right">Textured</button>
+                </div>
+
+                <div class="model-container" id="model-compare-wrapper">
+
+                    <div class="model-wrapper-comparison">
+                        <div class="model-label">RNb-NeuS2 (13 viewpoints)</div>
+                        <model-viewer id="modelViewerComparison1" class="model-viewer-texture" loading="eager"
+                                      poster="../assets/loading.gif" touch-action="pan-y" environment-image="legacy"
+                                      zoom-sensitivity="0.2"
+                                      camera-controls disable-tap min-camera-orbit="auto auto 0.5m"
+                                      max-camera-orbit="auto auto 10m" interaction-prompt="none"
+                                      shadow-intensity="1" ar style="width: 100%; height: 100%;">
+                        </model-viewer>
+                    </div>
+
+                    <div class="model-wrapper-comparison">
+                        <div class="tips-wrapper">
+                            <div class="tips-icon">💡Tips</div>
+                            <div class="tips-text">
+                                <p>● Scroll to zoom in/out</p>
+                                <p>● Drag to rotate</p>
+                                <p>● Press "shift" and drag to pan</p>
+                                <p>● Click on the buttons at the top to switch texture color on/off</p>
+                            </div>
+                        </div>
+                        <div class="model-label">Colmap (121 viewpoints)</div>
+                        <model-viewer id="modelViewerComparison2" class="model-viewer-texture" loading="eager"
+                                      poster="../assets/loading.gif" touch-action="pan-y" environment-image="legacy"
+                                      zoom-sensitivity="0.2"
+                                      camera-controls disable-tap min-camera-orbit="auto auto 0.5m"
+                                      max-camera-orbit="auto auto 10m" interaction-prompt="none"
+                                      shadow-intensity="1" ar style="width: 100%; height: 100%;">
+                        </model-viewer>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container is-max-desktop" style="padding-bottom:0px;">
+
+        <div class="image-gallery-container">
+            <div class="image-wrapper">
+                <img src="../assets/rnb_neus2/comparison/viking/warrior3.jpg">
+            </div>
+            <div class="image-wrapper">
+                <img src="../assets/rnb_neus2/comparison/viking/warrior2.jpg">
+            </div>
+            <div class="image-wrapper">
+                <img src="../assets/rnb_neus2/comparison/viking/warrior1.jpg">
+            </div>
+        </div>
+
+    </section>
+
+    <section class="container is-max-desktop" style="padding-bottom:20px;">
+        <div class="is-size-6 publication-authors-main" style="text-align: justify;">
+            3D viewer of the reconstructed <i>Cypriot Warrior Head</i><sup style="padding-left: 0.2em;">2</sup> from the <a href="https://saintraymond.toulouse.fr/">Musée Saint-Raymond</a> (Toulouse, France).
+            The left view represents the reconstruction from RNb-NeuS2 (ours) using normals from <a id="ref3" href="#cit3">[3]</a> with 13 viewpoints.
+            The right view corresponds to the reconstruction from Colmap <a id="ref4" href="#cit4">[4]</a> using 121 viewpoints.
+        </div>
+    </section>
+
+
+    <section class="container is-max-desktop" style="padding-bottom: 30px">
+        <hr class="content has-text-justified" style="border-top: 3px double;">
+        <div class="is-size-5 publication-authors-main" style="text-align: center;">
+            <b>Reconstructing High-Frequency Surface Details Under Complex Reflectance</b>
+        </div>
+    </section>
+
+
+    <div class="container;" style=" padding-bottom: 0px;">
+        <div class="bordered-container2">
             <div class="b-dics" style="width: 60%; font-weight: 600; margin: 0 auto;">
-                <img src="../assets/rnb_neus/images/cmp_methods/buddha/kaya.png" alt="Kaya et al. 23">
-                <img src="../assets/rnb_neus/images/cmp_methods/buddha/ours.png" alt="RNb-Neus (Ours)">
-                <img src="../assets/rnb_neus/images/cmp_methods/buddha/mvpsnet.png" alt="MVPSNet">
-            </div>
+                <img src="../assets/rnb_neus2/images/golden_snail/rnb/image__53.png" alt="Ours">
+                <img src="../assets/rnb_neus2/images/golden_snail/neus2/image__53.png" alt="NeuS2">
             </div>
         </div>
-
-  -->
-  <!--
-  <section class="hero">
-    <div class="hero-body" style="padding: 0;">
-      <div class="container is-max-desktop" id="comparison_container3">
-        <div class="content has-text-justified">
-        </div>
-        <div class="model-container" id="model-compare-wrapper3">
-
-          <div class="model-wrapper-comparison">
-            <div class="model-label">RNb-NeuS2</div>
-            <model-viewer id="modelViewerComparison3_1" class="model-viewer-texture" loading="eager"
-              poster="../assets/loading.gif" touch-action="pan-y" environment-image="legacy" zoom-sensitivity="0.2"
-              camera-controls disable-tap min-camera-orbit="auto auto 1m" max-camera-orbit="auto auto 10m" interaction-prompt="none"
-              shadow-intensity="1" ar style="width: 100%; height: 100%;">
-            </model-viewer>
-          </div>
-
-          <div class="model-wrapper-comparison">
-            <div class="model-label">RNb-NeuS</div>
-            <model-viewer id="modelViewerComparison3_2" class="model-viewer-texture" loading="eager"
-              poster="../assets/loading.gif" touch-action="pan-y" environment-image="legacy" zoom-sensitivity="0.2"
-              camera-controls disable-tap min-camera-orbit="auto auto 1m" max-camera-orbit="auto auto 10m" interaction-prompt="none"
-              shadow-intensity="1" ar style="width: 100%; height: 100%;">
-            </model-viewer>
-          </div>
-          <div class="model-wrapper-comparison">
-            <div class="model-label">NeuS</div>
-            <model-viewer id="modelViewerComparison3_3" class="model-viewer-texture" loading="eager"
-              poster="../assets/loading.gif" touch-action="pan-y" environment-image="legacy" zoom-sensitivity="0.2"
-              camera-controls disable-tap min-camera-orbit="auto auto 1m" max-camera-orbit="auto auto 10m" interaction-prompt="none"
-              shadow-intensity="1" ar style="width: 100%; height: 100%;">
-            </model-viewer>
-          </div>
-        </div>
-        <div class="hero-body" style="padding: 0;">
-          <div class="selection-panel" id="comparisonSelectionPanel3" style="width: 90% !important; aspect-ratio: 3.8/1; margin-left: 5%;">
-            <img class="selectable-image selected" name="bear">
-            <img class="selectable-image" name="buddha">
-            <img class="selectable-image" name="cow">
-            <img class="selectable-image" name="pot2">
-            <img class="selectable-image" name="reading">
-
-
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
-  -->
+
+    <section class="container is-max-desktop" style="padding-bottom:0px;">
+
+        <div class="image-gallery-container">
+            <div class="image-wrapper1">
+                <img src="../assets/rnb_neus2/images/golden_snail/000.png">
+            </div>
+            <div class="image-wrapper1">
+                <img src="../assets/rnb_neus2/images/golden_snail/001.png">
+            </div>
+            <div class="image-wrapper1">
+                <img src="../assets/rnb_neus2/images/golden_snail/002.png">
+            </div>
+        </div>
+
+    </section>
+
+    <section class="container is-max-desktop" style="padding-bottom:20px;">
+        <div class="is-size-6 publication-authors-main" style="text-align: justify;">
+            3D reconstruction of the <code>golden_snail</code> from Skoltech3D <a id="ref5" href="#cit5">[5]</a>.
+            The left view represents the reconstruction from RNb-NeuS2 (ours) using normal and albedo maps from SDM-UniPS <a id="ref6" href="#cit6">[6]</a> with 20 viewpoints.
+            The right view corresponds to the reconstruction from NeuS2 <a id="ref7" href="#cit7">[7]</a> using 20 viewpoints.
+        </div>
+    </section>
+
+    <section class="container is-max-desktop" style="padding-bottom: 30px">
+        <hr class="content has-text-justified" style="border-top: 3px double;">
+        <div class="is-size-5 publication-authors-main" style="text-align: center;">
+            <b> Reconstructing Transparent Materials</b>
+        </div>
+    </section>
+
+
+    <div class="container;" style=" padding-bottom: 0px;">
+        <div class="bordered-container2">
+            <div class="b-dics" style="width: 60%; font-weight: 600; margin: 0 auto;">
+                <img src="../assets/rnb_neus2/images/orange_mini_vacuum/rnb/image__53.png" alt="Ours">
+                <img src="../assets/rnb_neus2/images/orange_mini_vacuum/neus2/image__53.png" alt="NeuS2">
+            </div>
+        </div>
+    </div>
+
+    <section class="container is-max-desktop" style="padding-top:0px;">
+
+        <div class="image-gallery-container">
+            <div class="image-wrapper2">
+                <img src="../assets/rnb_neus2/images/orange_mini_vacuum/000.png">
+            </div>
+            <div class="image-wrapper2">
+                <img src="../assets/rnb_neus2/images/orange_mini_vacuum/001.png">
+            </div>
+            <div class="image-wrapper2">
+                <img src="../assets/rnb_neus2/images/orange_mini_vacuum/002.png">
+            </div>
+        </div>
+
+    </section>
+
+    <section class="container is-max-desktop" style="padding-bottom:20px;">
+        <div class="is-size-6 publication-authors-main" style="text-align: justify;">
+            3D reconstruction of the <code>orange_mini_vacuum</code> from Skoltech3D <a href="#cit5">[5]</a>.
+            The left view represents the reconstruction from RNb-NeuS2 (ours) using normal and albedo maps from SDM-UniPS <a href="#cit6">[6]</a> with 20 viewpoints.
+            The right view corresponds to the reconstruction from NeuS2 <a  href="#cit7">[7]</a> using 20 viewpoints.
+        </div>
+    </section>
+
+    <section class="container is-max-desktop" style="padding-bottom: 30px">
+        <hr class="content has-text-justified" style="border-top: 3px double;">
+        <div class="is-size-5 publication-authors-main" style="text-align: center;">
+            <b> Accurate Reconstruction of Concave Structures</b>
+        </div>
+    </section>
+
+
+    <div class="container;" style=" padding-bottom: 0px;">
+        <div class="bordered-container2">
+            <div class="b-dics" style="width: 60%; font-weight: 600; margin: 0 auto;">
+                <img src="../assets/rnb_neus2/images/wooden_trex/rnb/image__53.png" alt="Ours">
+                <img src="../assets/rnb_neus2/images/wooden_trex/neus2/image__53.png" alt="NeuS2">
+            </div>
+        </div>
+    </div>
+
+    <section class="container is-max-desktop" style="padding-bottom:0px;">
+
+        <div class="image-gallery-container">
+            <div class="image-wrapper3">
+                <img src="../assets/rnb_neus2/images/wooden_trex/000.png">
+            </div>
+            <div class="image-wrapper3">
+                <img src="../assets/rnb_neus2/images/wooden_trex/002.png">
+            </div>
+            <div class="image-wrapper3">
+                <img src="../assets/rnb_neus2/images/wooden_trex/001.png">
+            </div>
+        </div>
+
+    </section>
+
+    <section class="container is-max-desktop" style="padding-bottom:20px;">
+        <div class="is-size-6 publication-authors-main" style="text-align: justify;">
+            3D reconstruction of the <code>wooden_trex</code> from Skoltech3D <a href="#ref5">[5]</a>.
+            The left view represents the reconstruction from RNb-NeuS2 (ours) using normals from UniMS-PS <a id="ref8" href="#cit8">[8]</a> with 20 viewpoints.
+            The right view corresponds to the reconstruction from NeuS2 <a href="#cit7">[7]</a> using 20 viewpoints.
+        </div>
+    </section>
+
+    <section class="container is-max-desktop" style="padding-bottom: 30px">
+        <hr class="content has-text-justified" style="border-top: 3px double;">
+        <div class="is-size-5 publication-authors-main" style="text-align: center;">
+            <b>Archeological Objects</b>
+        </div>
+    </section>
+
+    <section class="container is-max-desktop" style="padding-bottom:20px;">
+        <div class="is-size-6 publication-authors-main" style="text-align: justify;">
+            <b><sup>1</sup>Cypriot Woman's Head with Calathos</b><br>
+            This first archaeological object is a small ceramic piece from the collections of the Musée Saint-Raymond,
+            Toulouse, France. Originating from Cyprus and dating from the 4th century BC, it depicts a woman's head adorned
+            with a calathos, broken at the neck. (Dimensions: 5.7cm x 4.2cm x 1.4cm). The 3D acquisitions of the Cypriot
+            woman's head were conducted within the reserves of the Musée Saint-Raymond. An initial acquisition was performed
+            using an Artec Spider hand-held scanner, which offers a 3D point accuracy down to 50 µm and a 3D mesh resolution
+            down to 100 µm. Photogrammetry involved capturing 48 photographs of the front face with a Nikon Z7 II camera and
+            a 50 mm lens from an average distance of 22 cm. For multi-view photometric stereo, 5 sequences of 35 shots each were
+            taken from 5 different viewpoints using an RTI dome, with the same camera and lens.
+        </div>
+    </section>
+
+    <section class="container is-max-desktop" style="padding-bottom:20px;">
+        <div class="is-size-6 publication-authors-main" style="text-align: justify;">
+            <b><sup>2</sup>Cypriot Warrior Head</b><br>
+            The second object is a terracotta Cypriot warrior head, also from the Musée Saint-Raymond in Toulouse, France.
+            This piece dates back to the 6th century BC and originates from Cyprus. (Dimensions: 45cm x 18.2cm x 19.5cm).
+            For photogrammetry, 121 photographs were taken using a Nikon Z7 II camera equipped with a 35mm lens and a Godox AD100pro flash.
+            For multi-view photometric stereo, 13 viewpoints were captured, with 12 lighting conditions per viewpoint, totaling 156 images.
+        </div>
+    </section>
+
+    <section class="container is-max-desktop" style="padding-bottom: 30px">
+        <hr class="content has-text-justified" style="border-top: 3px double;">
+        <div class="is-size-5 publication-authors-main" style="text-align: center;">
+            <b>Citation</b>
+        </div>
+    </section>
+
+    <section class="container is-max-desktop" style="padding-bottom:20px;">
+        <div class="is-size-6 publication-authors-main" style="text-align: justify;">
+            <div class="row" style="border-radius: 15px;">
+                <div id="citation" style="border-radius: 15px;">
+                    @misc{Bruneau25,<br>
+                    &nbsp;&nbsp;title={Multi-view Surface Reconstruction Using Normal and Reflectance Cues},<br>
+                    &nbsp;&nbsp;author={Robin Bruneau and Baptiste Brument and Yvain Quéau and Jean Mélou and François Bernard Lauze and Jean-Denis Durou and Lilian Calvet},<br>
+                    &nbsp;&nbsp;year={2025},<br>
+                    &nbsp;&nbsp;eprint={2506.04115},<br>
+                    &nbsp;&nbsp;archivePrefix={arXiv},<br>
+                    &nbsp;&nbsp;primaryClass={cs.CV},<br>
+                    &nbsp;&nbsp;url={https://arxiv.org/abs/2506.04115},<br>
+                    }
+                </div>
+
+            </div>
+            <div style="text-align:center;">
+                <button id="copy-button" class="copy-button" onclick="copyTextToClipboard()" >Copy</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container is-max-desktop" style="padding-bottom: 30px">
+        <hr class="content has-text-justified" style="border-top: 3px double;">
+        <div class="is-size-5 publication-authors-main" style="text-align: center;">
+            <b>Acknowledgements</b>
+        </div>
+    </section>
+
+
+    <section class="container is-max-desktop" style="padding-bottom:20px;">
+        <div class="is-size-6 publication-authors-main" style="text-align: justify;">
+            Robin Bruneau's postdoctoral fellowship was funded by the Department of Quantitative Biomedicine at the University of Zurich.
+            Baptiste Brument's doctoral student fellowship was funded by the CNRS through the project Open-DOPAMIn.
+            Lilian Calvet's postdoctoral fellowship was supported by the University of Zurich, the University Hospital of Balgrist, and the OR-X - a Swiss national research infrastructure for translational surgery.
+            The research leading to these results received funding from the French National Research Agency (ANR) through the LabCom project ALICIA-Vision, and by the Department of Computer Science at the University of Copenhagen (DIKU) through the Copenhagen Data+ project PHYLORAMA.
+            <br>
+            We would also like to thank our partners for their support.
+            We thank the <a href="https://saintraymond.toulouse.fr/">Musée Saint-Raymond</a> in Toulouse for providing access to the archaeological objects.
+            We also thank <a href="https://cv.hal.science/antoine-laurent-archeologie">Antoine Laurent</a> for his work on the 3D acquisitions and <a href="https://scholar.google.com/citations?user=H5LhL7AAAAAJ&hl=fr&oi=sra">Benjamin Coupry</a> for the data processing and generation of normal maps.
+
+        
+        </div>
+    </section>
+
+
+        <section class="container is-max-desktop" style="padding-bottom: 30px">
+        <hr class="content has-text-justified" style="border-top: 3px double;">
+        <div class="is-size-5 publication-authors-main" style="text-align: center;">
+            <b>References</b>
+        </div>
+    </section>
+
+
+    <section class="container is-max-desktop" style="padding-bottom:60px;">
+        <div id="references" class="is-size-6 publication-authors-main" style="text-align: justify;">
+            <a id="cit1" href="#cit1">[1]</a> <i>RNb-NeuS: Reflectance and Normal-based Multi-View 3D Reconstruction </i>, Brument et al. CVPR 2024
+            <br>
+            <a id="cit2" href="#ref2">[2]</a> <i>Assessing the Quality of 3D Reconstruction in the Absence of Ground Truth: Application to a Multimodal Archaeological Dataset </i>, Coupry et al., WACV 2025
+            <br>
+            <a id="cit3" href="#ref3">[3]</a> <i>Self-calibrated Near-light Photometric Stereo using a Geometric Proxy </i>, Coupry et al. SSVM 2025
+            <br>
+            <a id="cit4" href="#ref4">[4]</a> <i>Pixelwise View Selection for Unstructured Multi-View Stereo </i>, Schoenberger et al. ECCV 2016
+            <br>
+            <a id="cit5" href="#ref5">[5]</a> <i>Multi-sensor large-scale dataset for multi-view 3D reconstruction </i>, Voynov et al. CVPR 2023
+            <br>
+            <a id="cit6" href="#ref6">[6]</a> <i>Scalable, Detailed and Mask-free Universal Photometric Stereo </i>, Ikehata et al. CVPR 2023
+            <br>
+            <a id="cit7" href="#ref7">[7]</a> <i>NeuS2: Fast Learning of Neural Implicit Surfaces for Multi-view Reconstruction</i>, Wang et al. ICCV 2023
+            <br>
+            <a id="cit8" href="#ref8">[8]</a> <i>Uni MS-PS: A multi-scale encoder-decoder transformer for universal photometric stereo </i>, Hardy et al. CVIU 2024
+            <br>
+        </div>
+    </section>
+
 
 </div>
 
-    <script src="../js/3d/model-viewer.js"></script>
-    <script src="../js/3d/comparison.js"></script>
-    <script src="../js/3d/comparison_3.js"></script>
+<script src="../js/3d/model-viewer.js"></script>
+<script src="../js/3d/comparison_no_list.js"></script>
 
-    <script src="../neural/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script id="MathJax-script" async="" src="../../../npm/mathjax%403/es5/tex-mml-chtml.js"></script>
-    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'> -->
+<script src="../neural/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script id="MathJax-script" async="" src="../../../npm/mathjax%403/es5/tex-mml-chtml.js"></script>
+<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'> -->
 
-    <link rel="stylesheet" href="../js/dics/dics.original.css">
-    <script src="../js/dics/dics.original.js"></script>
-    <script src="../js/event_handler.js"></script>
+<link rel="stylesheet" href="../js/dics/dics.original.css">
+<script src="../js/dics/dics.original.js"></script>
+<script src="../js/event_handler.js"></script>
 
 
-    <link rel="stylesheet" type="text/css" href="../css/style_neural.css">
+<link rel="stylesheet" type="text/css" href="../css/style_neural.css">
 
+<style>
+    code {
+    font-family: 'Fira Code', 'DejaVu Sans Mono', Consolas, 'Liberation Mono', monospace;
+    /* Pas de couleur de fond */
+    background-color: transparent; /* Ou simplement supprimer la ligne background-color */
+    /* Couleur du texte noire */
+    color: black; /* Ou color: #000; */
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 1.0rem; /* Ajoute cette ligne pour la taille de police */
+}
+
+</style>
+
+
+<div id="copyMessage">
+    @misc{Bruneau25,
+          title={Multi-view Surface Reconstruction Using Normal and Reflectance Cues}, 
+          author={Robin Bruneau and Baptiste Brument and Yvain Quéau and Jean Mélou and François Bernard Lauze and Jean-Denis Durou and Lilian Calvet},
+          year={2025},
+          eprint={2506.04115},
+          archivePrefix={arXiv},
+          primaryClass={cs.CV},
+          url={https://arxiv.org/abs/2506.04115}, 
+    }
+</div>
+
+<script>
+    function copyTextToClipboard() {
+        // Get the text with line breaks
+        const textWithLineBreaks = document.getElementById('copyMessage').innerHTML;
+
+        // Copy the text to the clipboard
+        navigator.clipboard.writeText(textWithLineBreaks)
+            .then(() => {
+                // Optionally, provide some feedback to the user
+                document.getElementById('copy-button').style.backgroundColor = 'green';
+                document.getElementById('copy-button').textContent = 'Copied';
+            })
+            .catch(err => {
+                console.error('Unable to copy text to clipboard', err);
+            });
+        }
+</script>
 
 </body>
 </html>
