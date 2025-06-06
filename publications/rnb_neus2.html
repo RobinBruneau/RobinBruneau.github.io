@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="../js/3d/index.css">
     <link rel="stylesheet" href="../js/3d/selection-panel.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
+    <link rel="stylesheet" type="text/css" href="../css/style_neural.css">
+    <link rel="stylesheet" href="../js/dics/dics.original.css">
 
     <script type="module" src="../js/3d/model-viewer.min.js"></script>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
@@ -35,28 +35,39 @@
 
     <script src="../js/3d/index.js"></script>
 
+    <script src="../js/3d/model-viewer.js"></script>
+
     <script src="../js/3d/comparison_no_list.js"></script>
 
     <script src="../neural/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="../js/dics/dics.original.css">
     <script src="../js/dics/dics.original.js"></script>
+
     <script src="../js/event_handler.js"></script>
-
-
-
-
-
 
     <style>
         body { display: flex; justify-content: center; align-items: center; height: 100vh; gap: 20px; flex-wrap: wrap;}
         iframe { width: 45vw; height: 90vh; border: 1px solid #ccc; }
     </style>
 
+    <style>
+        code {
+        font-family: 'Fira Code', 'DejaVu Sans Mono', Consolas, 'Liberation Mono', monospace;
+        /* Pas de couleur de fond */
+        background-color: transparent; /* Ou simplement supprimer la ligne background-color */
+        /* Couleur du texte noire */
+        color: black; /* Ou color: #000; */
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-size: 1.0rem; /* Ajoute cette ligne pour la taille de police */
+    }
+
+    </style>
+
     <title>RNb-NeuS2</title>
+
 </head>
 <body>
-
 
 <div class="section-container">
     <section class="hero">
@@ -96,7 +107,7 @@
                         <div class="is-size-6 publication-authors">
                             <span class="author-block"><sup>3</sup>GREYC, University of Caen</span>
                             <span class="author-block">&nbsp &nbsp</span>
-                            <span class="author-block"><sup>4</sup>FittingBox, Toulouse, France</span> 
+                            <span class="author-block"><sup>4</sup>FittingBox, Toulouse, France</span>
                         </div>
                         <div class="is-size-6 publication-authors">
                             <span class="author-block"><sup>5</sup>DIKU, University of Copenhagen</span>
@@ -141,7 +152,8 @@
                 </span>
 
                                 <span class="link-block">
-                  <a href="https://drive.google.com/file/d/1KDfCKediXNP5Os954TL_QldaUWS0nKcD/view" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <a href="https://drive.google.com/file/d/1KDfCKediXNP5Os954TL_QldaUWS0nKcD/view"
+                     class="external-link button is-normal is-rounded is-dark" target="_blank">
                     <span class="icon">
                       <i class="ai ai-obp"></i>
                     </span>
@@ -166,7 +178,7 @@
         </div>
         <div class="is-size-6 publication-authors-main" style="text-align: justify; padding-top:30px">
             Achieving high-fidelity 3D surface reconstruction while preserving fine details remains challenging,
-            especially in the presence of materials  with complex reflectance properties and without a dense-view
+            especially in the presence of materials with complex reflectance properties and without a dense-view
             setup. In this paper, we introduce a versatile framework that integrates multi-view normal and optionally
             reflectance maps into radiance-based surface reconstruction. Our approach employs a pixel-wise
             joint re-parameterization of reflectance and surface normals, representing them as a vector of
@@ -176,7 +188,9 @@
             achieves state-of-the-art performance on multi-view photometric stereo (MVPS) benchmark datasets,
             including DiLiGenT-MV, LUCES-MV and Skoltech3D. In particular, our method excels in reconstructing
             fine-grained details and handling challenging visibility conditions. The present paper is an extended
-            version of the earlier conference paper by <a href="./rnb_neus.html">Brument et al. </a> <a id="ref1" href="#cit1">[1]</a>, featuring an accelerated and more robust algorithm as well as
+            version of the earlier conference paper by <a href="./rnb_neus.html">Brument et al. </a> <a id="ref1"
+                                                                                                        href="#cit1">[1]</a>,
+            featuring an accelerated and more robust algorithm as well as
             a broader empirical evaluation.
         </div>
     </section>
@@ -196,14 +210,13 @@
     </section>
 
 
-
     <section class="container is-max-desktop" style="padding-bottom:20px;">
-    <div class="is-size-6 publication-authors-main" style="text-align: justify;">
-      Reconstruction of the <i>Cypriot Woman's Head with Calathos</i><sup>1</sup> from the
-        <a href="https://saintraymond.toulouse.fr/">Musée Saint-Raymond</a> (Toulouse, France) with normals
-        estimated via <a id="ref2" href="#cit2">[2]</a>. <br><br>
-    </div>
-  </section>
+        <div class="is-size-6 publication-authors-main" style="text-align: justify;">
+            Reconstruction of the <i>Cypriot Woman's Head with Calathos</i><sup>1</sup> from the
+            <a href="https://saintraymond.toulouse.fr/">Musée Saint-Raymond</a> (Toulouse, France) with normals
+            estimated via <a id="ref2" href="#cit2">[2]</a>. <br><br>
+        </div>
+    </section>
 
 
     <section class="container is-max-desktop" style="padding-bottom: 0px">
@@ -281,9 +294,13 @@
 
     <section class="container is-max-desktop" style="padding-bottom:20px;">
         <div class="is-size-6 publication-authors-main" style="text-align: justify;">
-            3D viewer of the reconstructed <i>Cypriot Warrior Head</i><sup style="padding-left: 0.2em;">2</sup> from the <a href="https://saintraymond.toulouse.fr/">Musée Saint-Raymond</a> (Toulouse, France).
-            The left view represents the reconstruction from RNb-NeuS2 (ours) using normals from <a id="ref3" href="#cit3">[3]</a> with 13 viewpoints.
-            The right view corresponds to the reconstruction from Colmap <a id="ref4" href="#cit4">[4]</a> using 121 viewpoints.
+            3D viewer of the reconstructed <i>Cypriot Warrior Head</i><sup style="padding-left: 0.2em;">2</sup> from the
+            <a href="https://saintraymond.toulouse.fr/">Musée Saint-Raymond</a> (Toulouse, France).
+            The left view represents the reconstruction from RNb-NeuS2 (ours) using normals from <a id="ref3"
+                                                                                                    href="#cit3">[3]</a>
+            with 13 viewpoints.
+            The right view corresponds to the reconstruction from Colmap <a id="ref4" href="#cit4">[4]</a> using 121
+            viewpoints.
         </div>
     </section>
 
@@ -324,8 +341,10 @@
     <section class="container is-max-desktop" style="padding-bottom:20px;">
         <div class="is-size-6 publication-authors-main" style="text-align: justify;">
             3D reconstruction of the <code>golden_snail</code> from Skoltech3D <a id="ref5" href="#cit5">[5]</a>.
-            The left view represents the reconstruction from RNb-NeuS2 (ours) using normal and albedo maps from SDM-UniPS <a id="ref6" href="#cit6">[6]</a> with 20 viewpoints.
-            The right view corresponds to the reconstruction from NeuS2 <a id="ref7" href="#cit7">[7]</a> using 20 viewpoints.
+            The left view represents the reconstruction from RNb-NeuS2 (ours) using normal and albedo maps from
+            SDM-UniPS <a id="ref6" href="#cit6">[6]</a> with 20 viewpoints.
+            The right view corresponds to the reconstruction from NeuS2 <a id="ref7" href="#cit7">[7]</a> using 20
+            viewpoints.
         </div>
     </section>
 
@@ -365,8 +384,9 @@
     <section class="container is-max-desktop" style="padding-bottom:20px;">
         <div class="is-size-6 publication-authors-main" style="text-align: justify;">
             3D reconstruction of the <code>orange_mini_vacuum</code> from Skoltech3D <a href="#cit5">[5]</a>.
-            The left view represents the reconstruction from RNb-NeuS2 (ours) using normal and albedo maps from SDM-UniPS <a href="#cit6">[6]</a> with 20 viewpoints.
-            The right view corresponds to the reconstruction from NeuS2 <a  href="#cit7">[7]</a> using 20 viewpoints.
+            The left view represents the reconstruction from RNb-NeuS2 (ours) using normal and albedo maps from
+            SDM-UniPS <a href="#cit6">[6]</a> with 20 viewpoints.
+            The right view corresponds to the reconstruction from NeuS2 <a href="#cit7">[7]</a> using 20 viewpoints.
         </div>
     </section>
 
@@ -406,7 +426,9 @@
     <section class="container is-max-desktop" style="padding-bottom:20px;">
         <div class="is-size-6 publication-authors-main" style="text-align: justify;">
             3D reconstruction of the <code>wooden_trex</code> from Skoltech3D <a href="#ref5">[5]</a>.
-            The left view represents the reconstruction from RNb-NeuS2 (ours) using normals from UniMS-PS <a id="ref8" href="#cit8">[8]</a> with 20 viewpoints.
+            The left view represents the reconstruction from RNb-NeuS2 (ours) using normals from UniMS-PS <a id="ref8"
+                                                                                                             href="#cit8">[8]</a>
+            with 20 viewpoints.
             The right view corresponds to the reconstruction from NeuS2 <a href="#cit7">[7]</a> using 20 viewpoints.
         </div>
     </section>
@@ -422,12 +444,17 @@
         <div class="is-size-6 publication-authors-main" style="text-align: justify;">
             <b><sup>1</sup>Cypriot Woman's Head with Calathos</b><br>
             This first archaeological object is a small ceramic piece from the collections of the Musée Saint-Raymond,
-            Toulouse, France. Originating from Cyprus and dating from the 4th century BC, it depicts a woman's head adorned
+            Toulouse, France. Originating from Cyprus and dating from the 4th century BC, it depicts a woman's head
+            adorned
             with a calathos, broken at the neck. (Dimensions: 5.7cm x 4.2cm x 1.4cm). The 3D acquisitions of the Cypriot
-            woman's head were conducted within the reserves of the Musée Saint-Raymond. An initial acquisition was performed
-            using an Artec Spider hand-held scanner, which offers a 3D point accuracy down to 50 µm and a 3D mesh resolution
-            down to 100 µm. Photogrammetry involved capturing 48 photographs of the front face with a Nikon Z7 II camera and
-            a 50 mm lens from an average distance of 22 cm. For multi-view photometric stereo, 5 sequences of 35 shots each were
+            woman's head were conducted within the reserves of the Musée Saint-Raymond. An initial acquisition was
+            performed
+            using an Artec Spider hand-held scanner, which offers a 3D point accuracy down to 50 µm and a 3D mesh
+            resolution
+            down to 100 µm. Photogrammetry involved capturing 48 photographs of the front face with a Nikon Z7 II camera
+            and
+            a 50 mm lens from an average distance of 22 cm. For multi-view photometric stereo, 5 sequences of 35 shots
+            each were
             taken from 5 different viewpoints using an RTI dome, with the same camera and lens.
         </div>
     </section>
@@ -435,10 +462,14 @@
     <section class="container is-max-desktop" style="padding-bottom:20px;">
         <div class="is-size-6 publication-authors-main" style="text-align: justify;">
             <b><sup>2</sup>Cypriot Warrior Head</b><br>
-            The second object is a terracotta Cypriot warrior head, also from the Musée Saint-Raymond in Toulouse, France.
-            This piece dates back to the 6th century BC and originates from Cyprus. (Dimensions: 45cm x 18.2cm x 19.5cm).
-            For photogrammetry, 121 photographs were taken using a Nikon Z7 II camera equipped with a 35mm lens and a Godox AD100pro flash.
-            For multi-view photometric stereo, 13 viewpoints were captured, with 12 lighting conditions per viewpoint, totaling 156 images.
+            The second object is a terracotta Cypriot warrior head, also from the Musée Saint-Raymond in Toulouse,
+            France.
+            This piece dates back to the 6th century BC and originates from Cyprus. (Dimensions: 45cm x 18.2cm x
+            19.5cm).
+            For photogrammetry, 121 photographs were taken using a Nikon Z7 II camera equipped with a 35mm lens and a
+            Godox AD100pro flash.
+            For multi-view photometric stereo, 13 viewpoints were captured, with 12 lighting conditions per viewpoint,
+            totaling 156 images.
         </div>
     </section>
 
@@ -455,7 +486,8 @@
                 <div id="citation" style="border-radius: 15px;">
                     @misc{Bruneau25,<br>
                     &nbsp;&nbsp;title={Multi-view Surface Reconstruction Using Normal and Reflectance Cues},<br>
-                    &nbsp;&nbsp;author={Robin Bruneau and Baptiste Brument and Yvain Quéau and Jean Mélou and François Bernard Lauze and Jean-Denis Durou and Lilian Calvet},<br>
+                    &nbsp;&nbsp;author={Robin Bruneau and Baptiste Brument and Yvain Quéau and Jean Mélou and François
+                    Bernard Lauze and Jean-Denis Durou and Lilian Calvet},<br>
                     &nbsp;&nbsp;year={2025},<br>
                     &nbsp;&nbsp;eprint={2506.04115},<br>
                     &nbsp;&nbsp;archivePrefix={arXiv},<br>
@@ -466,7 +498,7 @@
 
             </div>
             <div style="text-align:center;">
-                <button id="copy-button" class="copy-button" onclick="copyTextToClipboard()" >Copy</button>
+                <button id="copy-button" class="copy-button" onclick="copyTextToClipboard()">Copy</button>
             </div>
         </div>
     </section>
@@ -482,21 +514,29 @@
 
     <section class="container is-max-desktop" style="padding-bottom:20px;">
         <div class="is-size-6 publication-authors-main" style="text-align: justify;">
-            Robin Bruneau's postdoctoral fellowship was funded by the Department of Quantitative Biomedicine at the University of Zurich.
+            Robin Bruneau's postdoctoral fellowship was funded by the Department of Quantitative Biomedicine at the
+            University of Zurich.
             Baptiste Brument's doctoral student fellowship was funded by the CNRS through the project Open-DOPAMIn.
-            Lilian Calvet's postdoctoral fellowship was supported by the University of Zurich, the University Hospital of Balgrist, and the OR-X - a Swiss national research infrastructure for translational surgery.
-            The research leading to these results received funding from the French National Research Agency (ANR) through the LabCom project ALICIA-Vision, and by the Department of Computer Science at the University of Copenhagen (DIKU) through the Copenhagen Data+ project PHYLORAMA.
+            Lilian Calvet's postdoctoral fellowship was supported by the University of Zurich, the University Hospital
+            of Balgrist, and the OR-X - a Swiss national research infrastructure for translational surgery.
+            The research leading to these results received funding from the French National Research Agency (ANR)
+            through the LabCom project ALICIA-Vision, and by the Department of Computer Science at the University of
+            Copenhagen (DIKU) through the Copenhagen Data+ project PHYLORAMA.
             <br>
             We would also like to thank our partners for their support.
-            We thank the <a href="https://saintraymond.toulouse.fr/">Musée Saint-Raymond</a> in Toulouse for providing access to the archaeological objects.
-            We also thank <a href="https://cv.hal.science/antoine-laurent-archeologie">Antoine Laurent</a> for his work on the 3D acquisitions and <a href="https://scholar.google.com/citations?user=H5LhL7AAAAAJ&hl=fr&oi=sra">Benjamin Coupry</a> for the data processing and generation of normal maps.
-            Finally, we thank <a href="https://www.linkedin.com/in/timflueckiger/">Tim Flueckiger</a> for the video creation.
-        
+            We thank the <a href="https://saintraymond.toulouse.fr/">Musée Saint-Raymond</a> in Toulouse for providing
+            access to the archaeological objects.
+            We also thank <a href="https://cv.hal.science/antoine-laurent-archeologie">Antoine Laurent</a> for his work
+            on the 3D acquisitions and <a href="https://scholar.google.com/citations?user=H5LhL7AAAAAJ&hl=fr&oi=sra">Benjamin
+            Coupry</a> for the data processing and generation of normal maps.
+            Finally, we thank <a href="https://www.linkedin.com/in/timflueckiger/">Tim Flueckiger</a> for the video
+            creation.
+
         </div>
     </section>
 
 
-        <section class="container is-max-desktop" style="padding-bottom: 30px">
+    <section class="container is-max-desktop" style="padding-bottom: 30px">
         <hr class="content has-text-justified" style="border-top: 3px double;">
         <div class="is-size-5 publication-authors-main" style="text-align: center;">
             <b>References</b>
@@ -506,21 +546,29 @@
 
     <section class="container is-max-desktop" style="padding-bottom:60px;">
         <div id="references" class="is-size-6 publication-authors-main" style="text-align: justify;">
-            <a id="cit1" href="#cit1">[1]</a> <i>RNb-NeuS: Reflectance and Normal-based Multi-View 3D Reconstruction </i>, Brument et al. CVPR 2024
+            <a id="cit1" href="#cit1">[1]</a> <i>RNb-NeuS: Reflectance and Normal-based Multi-View 3D
+            Reconstruction </i>, Brument et al. CVPR 2024
             <br>
-            <a id="cit2" href="#ref2">[2]</a> <i>Assessing the Quality of 3D Reconstruction in the Absence of Ground Truth: Application to a Multimodal Archaeological Dataset </i>, Coupry et al., WACV 2025
+            <a id="cit2" href="#ref2">[2]</a> <i>Assessing the Quality of 3D Reconstruction in the Absence of Ground
+            Truth: Application to a Multimodal Archaeological Dataset </i>, Coupry et al., WACV 2025
             <br>
-            <a id="cit3" href="#ref3">[3]</a> <i>Self-calibrated Near-light Photometric Stereo using a Geometric Proxy </i>, Coupry et al. SSVM 2025
+            <a id="cit3" href="#ref3">[3]</a> <i>Self-calibrated Near-light Photometric Stereo using a Geometric
+            Proxy </i>, Coupry et al. SSVM 2025
             <br>
-            <a id="cit4" href="#ref4">[4]</a> <i>Pixelwise View Selection for Unstructured Multi-View Stereo </i>, Schoenberger et al. ECCV 2016
+            <a id="cit4" href="#ref4">[4]</a> <i>Pixelwise View Selection for Unstructured Multi-View Stereo </i>,
+            Schoenberger et al. ECCV 2016
             <br>
-            <a id="cit5" href="#ref5">[5]</a> <i>Multi-sensor large-scale dataset for multi-view 3D reconstruction </i>, Voynov et al. CVPR 2023
+            <a id="cit5" href="#ref5">[5]</a> <i>Multi-sensor large-scale dataset for multi-view 3D reconstruction </i>,
+            Voynov et al. CVPR 2023
             <br>
-            <a id="cit6" href="#ref6">[6]</a> <i>Scalable, Detailed and Mask-free Universal Photometric Stereo </i>, Ikehata et al. CVPR 2023
+            <a id="cit6" href="#ref6">[6]</a> <i>Scalable, Detailed and Mask-free Universal Photometric Stereo </i>,
+            Ikehata et al. CVPR 2023
             <br>
-            <a id="cit7" href="#ref7">[7]</a> <i>NeuS2: Fast Learning of Neural Implicit Surfaces for Multi-view Reconstruction</i>, Wang et al. ICCV 2023
+            <a id="cit7" href="#ref7">[7]</a> <i>NeuS2: Fast Learning of Neural Implicit Surfaces for Multi-view
+            Reconstruction</i>, Wang et al. ICCV 2023
             <br>
-            <a id="cit8" href="#ref8">[8]</a> <i>Uni MS-PS: A multi-scale encoder-decoder transformer for universal photometric stereo </i>, Hardy et al. CVIU 2024
+            <a id="cit8" href="#ref8">[8]</a> <i>Uni MS-PS: A multi-scale encoder-decoder transformer for universal
+            photometric stereo </i>, Hardy et al. CVIU 2024
             <br>
         </div>
     </section>
@@ -528,33 +576,16 @@
 
 </div>
 
-
-<link rel="stylesheet" type="text/css" href="../css/style_neural.css">
-
-<style>
-    code {
-    font-family: 'Fira Code', 'DejaVu Sans Mono', Consolas, 'Liberation Mono', monospace;
-    /* Pas de couleur de fond */
-    background-color: transparent; /* Ou simplement supprimer la ligne background-color */
-    /* Couleur du texte noire */
-    color: black; /* Ou color: #000; */
-    padding: 2px 4px;
-    border-radius: 3px;
-    font-size: 1.0rem; /* Ajoute cette ligne pour la taille de police */
-}
-
-</style>
-
-
 <div id="copyMessage">
     @misc{Bruneau25,
-          title={Multi-view Surface Reconstruction Using Normal and Reflectance Cues}, 
-          author={Robin Bruneau and Baptiste Brument and Yvain Quéau and Jean Mélou and François Bernard Lauze and Jean-Denis Durou and Lilian Calvet},
-          year={2025},
-          eprint={2506.04115},
-          archivePrefix={arXiv},
-          primaryClass={cs.CV},
-          url={https://arxiv.org/abs/2506.04115}, 
+    title={Multi-view Surface Reconstruction Using Normal and Reflectance Cues},
+    author={Robin Bruneau and Baptiste Brument and Yvain Quéau and Jean Mélou and François Bernard Lauze and Jean-Denis
+    Durou and Lilian Calvet},
+    year={2025},
+    eprint={2506.04115},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV},
+    url={https://arxiv.org/abs/2506.04115},
     }
 </div>
 
@@ -575,8 +606,6 @@
             });
         }
 </script>
-
-
 
 </body>
 </html>
