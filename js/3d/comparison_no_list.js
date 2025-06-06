@@ -71,34 +71,6 @@ modelViewerComparison2.addEventListener('camera-change', syncView)
 modelViewerComparison2.addEventListener('mousedown', () => {syncViewWith = modelViewerComparison2;});
 modelViewerComparison2.addEventListener('wheel', () => {syncViewWith = modelViewerComparison2;});
 
-// Fonction pour formater et logger l'orbite de la caméra
-function logCameraOrbit(viewerId, event) {
-    const orbit = event.target.getCameraOrbit();
-    const target = event.target.getCameraTarget();
-    // Le format de getCameraOrbit() est {theta: X, phi: Y, radius: Z} en radians pour theta/phi
-    // On convertit en degrés pour une meilleure lisibilité
-    const thetaDeg = (orbit.theta * 180 / Math.PI).toFixed(2);
-    const phiDeg = (orbit.phi * 180 / Math.PI).toFixed(2);
-    const radiusM = orbit.radius.toFixed(2);
-
-    const targetX = target.x.toFixed(2);
-    const targetY = target.y.toFixed(2);
-    const targetZ = target.z.toFixed(2);
-
-    console.log(
-        `${viewerId} Camera Orbit: theta=${thetaDeg}deg, phi=${phiDeg}deg, radius=${radiusM}m`
-    );
-    console.log(
-        `${viewerId} Camera Target: X=${targetX}m, Y=${targetY}m, Z=${targetZ}m` // <-- Et ici que le target est affiché !
-    );
-    console.log('---'); // Séparateur pour une meilleure lisibilité
-}
-
-// Écoutez l'événement 'camera-change' pour chaque model-viewer
-modelViewerComparison1.addEventListener('camera-change', (event) => {
-    logCameraOrbit("modelViewerComparison1", event);
-});
-
 
 
 // Initialize the model viewer with fixed model
